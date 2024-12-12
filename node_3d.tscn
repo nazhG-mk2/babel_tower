@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://jnm3d7m8hbn1"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_gidrc"]
+[ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://lucy_01.png" id="2_afol4"]
+[ext_resource type="Script" path="res://spring_arm_3d.gd" id="3_660u0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbj2s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ju6kx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jdt5q"]
+size = Vector3(1.00537, 1, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_gidrc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925313, 0)
+shape = SubResource("CapsuleShape3D_rbj2s")
+
+[node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.0967055, 0.0254568, 0, -0.0254568, 0.0967055, 0, 0.925313, 0)
+texture = ExtResource("2_afol4")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D"]
+script = ExtResource("3_660u0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -0.478226, 0)
+mesh = SubResource("BoxMesh_ju6kx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00268555, 0, 0)
+shape = SubResource("BoxShape3D_jdt5q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.995888, -3.01543e-09, -0.0905978, 0.0531983, 0.809448, 0.584777, 0.0733342, -0.587192, 0.806119, -5.08284, 6.7115, 5.69482)
+shadow_enabled = true
+shadow_opacity = 0.69
+shadow_blur = 2.212
+directional_shadow_split_1 = 0.049
+directional_shadow_blend_splits = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.896919, 0.442195, 0, -0.442195, 0.896919, 0.043819, 3.7551, 5.72438)
+fov = 109.688
