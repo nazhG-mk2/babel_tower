@@ -1,34 +1,44 @@
-[gd_scene load_steps=7 format=3 uid="uid://jnm3d7m8hbn1"]
+[gd_scene load_steps=12 format=3 uid="uid://jnm3d7m8hbn1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gidrc"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://lucy_01.png" id="2_afol4"]
 [ext_resource type="Script" path="res://spring_arm_3d.gd" id="3_660u0"]
+[ext_resource type="Texture2D" uid="uid://c2468b32j8sqa" path="res://textures/suelo_ladrillo.jpeg" id="4_cwoml"]
+[ext_resource type="Script" path="res://dragonsito_move_3d.gd" id="5_k2w48"]
+[ext_resource type="Texture2D" uid="uid://cmsub0lkb0tts" path="res://enemies/dagonsito.png" id="6_qsqdr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbj2s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nsj4"]
+albedo_texture = ExtResource("4_cwoml")
+uv1_scale = Vector3(7.525, 7.525, 7.525)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ju6kx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jdt5q"]
 size = Vector3(1.00537, 1, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_mgrsd"]
+
 [node name="Node3D" type="Node3D"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="Player" type="CharacterBody3D" parent="."]
 script = ExtResource("1_gidrc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925313, 0)
 shape = SubResource("CapsuleShape3D_rbj2s")
 
-[node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D"]
+[node name="Sprite3D" type="Sprite3D" parent="Player"]
 transform = Transform3D(0.1, 0, 0, 0, 0.0967055, 0.0254568, 0, -0.0254568, 0.0967055, 0, 0.925313, 0)
 texture = ExtResource("2_afol4")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D"]
+[node name="SpringArm3D" type="SpringArm3D" parent="Player"]
 script = ExtResource("3_660u0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -0.478226, 0)
+material_override = SubResource("StandardMaterial3D_1nsj4")
 mesh = SubResource("BoxMesh_ju6kx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
@@ -46,5 +56,16 @@ directional_shadow_split_1 = 0.049
 directional_shadow_blend_splits = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.896919, 0.442195, 0, -0.442195, 0.896919, 0.043819, 3.7551, 5.72438)
-fov = 109.688
+transform = Transform3D(1, 0, 0, 0, 0.812938, 0.58235, 0, -0.58235, 0.812938, 0.043819, 3.7551, 4.45605)
+fov = 92.0566
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30047, 2.43291, 0.433142)
+script = ExtResource("5_k2w48")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_mgrsd")
+
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody3D/CollisionShape3D"]
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0, 0)
+texture = ExtResource("6_qsqdr")
