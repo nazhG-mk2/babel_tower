@@ -36,6 +36,18 @@ texture = ExtResource("2_afol4")
 [node name="SpringArm3D" type="SpringArm3D" parent="Player"]
 script = ExtResource("3_660u0")
 
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.812938, 0.58235, 0, -0.58235, 0.812938, 0.043819, 4.23344, 3.9167)
+current = true
+fov = 50.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19012, 0)
+light_color = Color(0.948826, 0.478385, 0.832196, 1)
+light_energy = 0.2
+light_specular = 0.0
+omni_range = 1.20553
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -0.478226, 0)
 material_override = SubResource("StandardMaterial3D_1nsj4")
@@ -49,15 +61,11 @@ shape = SubResource("BoxShape3D_jdt5q")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.995888, -3.01543e-09, -0.0905978, 0.0531983, 0.809448, 0.584777, 0.0733342, -0.587192, 0.806119, -5.08284, 6.7115, 5.69482)
-shadow_enabled = true
+light_energy = 0.3
 shadow_opacity = 0.69
 shadow_blur = 2.212
 directional_shadow_split_1 = 0.049
 directional_shadow_blend_splits = true
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.812938, 0.58235, 0, -0.58235, 0.812938, 0.043819, 4.23344, 3.9167)
-fov = 50.0
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30047, 2.43291, 0.433142)
