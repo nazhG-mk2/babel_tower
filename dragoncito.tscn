@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bscbluvm33tom"]
+
+[ext_resource type="Script" path="res://dragonsito_move_3d.gd" id="1_a3qe8"]
+[ext_resource type="Texture2D" uid="uid://cmsub0lkb0tts" path="res://enemies/dagonsito.png" id="2_r1dbj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_57njg"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30047, 2.43291, 0.433142)
+script = ExtResource("1_a3qe8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_57njg")
+
+[node name="Sprite3D" type="Sprite3D" parent="CollisionShape3D2"]
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0, 0)
+billboard = 1
+shaded = true
+alpha_cut = 2
+texture_filter = 4
+texture = ExtResource("2_r1dbj")
