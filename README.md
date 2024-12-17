@@ -20,6 +20,8 @@
 - environment light 0.1
 - dragon can move
 ![Progess](https://raw.githubusercontent.com/nazhG-mk2/babel_tower/refs/heads/master/advances/12_14.png)
+16/12
+- nuevo enemigo (Ivy)
 
 
 

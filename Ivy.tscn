@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://1qfcnxvbtpub"]
+
+[ext_resource type="Texture2D" uid="uid://deku42qqd6x3" path="res://textures/ivy.png" id="1_qc2wu"]
+[ext_resource type="Script" path="res://ivy.gd" id="1_x1q63"]
+[ext_resource type="PackedScene" uid="uid://c4k3c6j5fglof" path="res://standard_Ivy_projectile.tscn" id="2_6blrt"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_x1q63")
+projectile_scene = ExtResource("2_6blrt")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, 0.702544, 0)
+texture = ExtResource("1_qc2wu")
+
+[node name="Spawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59494, 0)

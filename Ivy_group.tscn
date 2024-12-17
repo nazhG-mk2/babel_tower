@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://drhv8wshiyap6"]
+
+[ext_resource type="PackedScene" uid="uid://1qfcnxvbtpub" path="res://Ivy.tscn" id="1_3ypif"]
+[ext_resource type="Script" path="res://ivy_group.gd" id="1_q0ueg"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_q0ueg")
+
+[node name="ivy_1" parent="." instance=ExtResource("1_3ypif")]
+
+[node name="ivy_2" parent="." instance=ExtResource("1_3ypif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80952, 0, 0)
+
+[node name="ivy_3" parent="." instance=ExtResource("1_3ypif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76383, 0, 0)

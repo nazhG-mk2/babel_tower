@@ -2,7 +2,7 @@ extends RigidBody3D
 
 var amplitude = 1  # Amplitud del movimiento (cuánto sube y baja)
 var speed = 0.8  # Velocidad de subida y bajada (más bajo = más lento)
-var move_speed = 1  # Velocidad constante hacia el jugador
+var move_speed = 0.1  # Velocidad constante hacia el jugador
 var start_position = Vector3(0, 0, 0)
 var time_passed = 0.0  # Variable para contar el tiempo
 var phase_offset = 0.0  # Fase inicial aleatoria

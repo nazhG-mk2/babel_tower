@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://jnm3d7m8hbn1"]
+[gd_scene load_steps=13 format=3 uid="uid://jnm3d7m8hbn1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gidrc"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://lucy_01.png" id="2_afol4"]
 [ext_resource type="Script" path="res://spring_arm_3d.gd" id="3_660u0"]
 [ext_resource type="Texture2D" uid="uid://c2468b32j8sqa" path="res://textures/suelo_ladrillo.jpeg" id="4_cwoml"]
 [ext_resource type="PackedScene" uid="uid://bscbluvm33tom" path="res://dragoncito.tscn" id="5_0rybu"]
+[ext_resource type="PackedScene" uid="uid://1qfcnxvbtpub" path="res://Ivy.tscn" id="6_jm4br"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbj2s"]
 
@@ -88,3 +89,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90492, 2.03453, -1.16351)
 
 [node name="RigidBody3D2" parent="." instance=ExtResource("5_0rybu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39815, 2.20697, -0.55574)
+
+[node name="Node3D" parent="." instance=ExtResource("6_jm4br")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84776, 0, -4.35729)
