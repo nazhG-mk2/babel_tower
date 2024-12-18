@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://jnm3d7m8hbn1"]
+[gd_scene load_steps=19 format=3 uid="uid://jnm3d7m8hbn1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gidrc"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://lucy_01.png" id="2_afol4"]
@@ -8,6 +8,100 @@
 [ext_resource type="PackedScene" uid="uid://1qfcnxvbtpub" path="res://Ivy.tscn" id="6_jm4br"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbj2s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hkmbl"]
+size = Vector3(1, 1.11743, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v454f"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_doe87"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="Animation" id="Animation_daejg"]
+resource_name = "area_flash"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/MeshInstance3D:material_override:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 1, 0), Color(1, 0, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/MeshInstance3D:mesh:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.3, 0.3, 0.3), Vector3(0.4, 0.4, 0.4), Vector3(0.4, 0.3, 0.3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area3D/MeshInstance3D:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.85, 0.1, 0.8]
+}
+
+[sub_resource type="Animation" id="Animation_1iksn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/MeshInstance3D:material_override:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/MeshInstance3D:mesh:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.3, 0.3, 0.3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area3D/MeshInstance3D:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.85]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jbq5h"]
+_data = {
+"RESET": SubResource("Animation_1iksn"),
+"area_flash": SubResource("Animation_daejg")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nsj4"]
 albedo_texture = ExtResource("4_cwoml")
@@ -53,6 +147,26 @@ light_color = Color(0.948826, 0.478385, 0.832196, 1)
 light_energy = 0.2
 light_specular = 0.0
 omni_range = 1.20553
+
+[node name="Area3D" type="Area3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.988558, 0.840702)
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.889965, 0.526275)
+shape = SubResource("BoxShape3D_hkmbl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Area3D"]
+transform = Transform3D(-0.707107, 0.5, 0.5, 0, 0.707107, -0.707107, -0.707107, -0.5, -0.5, 0, 0, -0.331121)
+material_override = SubResource("StandardMaterial3D_v454f")
+transparency = 0.85
+mesh = SubResource("BoxMesh_doe87")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+libraries = {
+"": SubResource("AnimationLibrary_jbq5h")
+}
+playback_auto_capture_ease_type = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -0.478226, 0)

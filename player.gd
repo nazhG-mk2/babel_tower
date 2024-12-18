@@ -4,6 +4,28 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 @export var player: Node3D
+@export var attack_damage: int = 10
+@export var attack_cooldown: float = 0.5
+var can_attack: bool = true
+
+func attack():
+	if not can_attack:
+		print('atck cd')
+		return
+	print('atck')
+	
+	can_attack = false
+	$Area3D.monitoring = true       # Activa el área para detectar colisiones
+	$AnimationPlayer.play("area_flash")
+	
+	# Desactiva el área tras un breve tiempo (sin `yield`)
+	await get_tree().create_timer(0.4).timeout
+	$AnimationPlayer.stop(true)
+	$Area3D.monitoring = false
+
+	# Aplica el cooldown antes de poder atacar de nuevo
+	await get_tree().create_timer(attack_cooldown).timeout
+	can_attack = true
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,3 +48,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func _process(delta):
+	if Input.is_action_just_pressed("attack"):
+		attack()
