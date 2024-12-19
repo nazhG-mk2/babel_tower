@@ -24,5 +24,6 @@
 - nuevo enemigo (Ivy)
 17/12
 - attack 0.1 ( Z key )
-
+18/12
+- player rotation
 

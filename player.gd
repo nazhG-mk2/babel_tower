@@ -43,6 +43,7 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		_update_sprite_flip(input_dir.x)  # Actualiza el sprite según el movimiento horizontal
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -52,3 +53,11 @@ func _physics_process(delta: float) -> void:
 func _process(delta):
 	if Input.is_action_just_pressed("attack"):
 		attack()
+		
+func _update_sprite_flip(direction_x: float):
+	if direction_x > 0:  # Moviéndose a la derecha
+		$Sprite3D.flip_h = true
+		$Area3D.rotation_degrees.y = 0
+	elif direction_x < 0:  # Moviéndose a la izquierda
+		$Sprite3D.flip_h = false
+		$Area3D.rotation_degrees.y = 180
