@@ -2,30 +2,40 @@ extends CharacterBody3D
 
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 6
 @export var player: Node3D
 @export var attack_damage: int = 10
 @export var attack_cooldown: float = 0.5
 var can_attack: bool = true
 
+func _ready():
+	# Conecta la señal cuando un cuerpo entra en el área
+	$Area3D.body_entered.connect(_on_body_entered)
+
 func attack():
 	if not can_attack:
-		print('atck cd')
+		print("Attack on cooldown")
 		return
-	print('atck')
 	
+	print("Attack initiated")
 	can_attack = false
-	$Area3D.monitoring = true       # Activa el área para detectar colisiones
+	$Area3D.monitoring = true  # Activa el área para detectar colisiones
 	$AnimationPlayer.play("area_flash")
 	
-	# Desactiva el área tras un breve tiempo (sin `yield`)
+	# Desactiva el área después de un breve tiempo
 	await get_tree().create_timer(0.4).timeout
 	$AnimationPlayer.stop(true)
 	$Area3D.monitoring = false
-
+	
 	# Aplica el cooldown antes de poder atacar de nuevo
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true
+	
+func _on_body_entered(body):
+	print("dentro del rango de ataque: ", body.name)
+	if $Area3D.monitoring and body.has_method("receive_damage"):
+		body.receive_damage(attack_damage)
+		print("Inflicted", attack_damage, "damage to", body)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

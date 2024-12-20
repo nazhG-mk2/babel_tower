@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://buvwp2u8lq1vd"]
+
+[ext_resource type="Script" path="res://barrel.gd" id="1_vf57c"]
+[ext_resource type="Texture2D" uid="uid://cauduf1k6dkii" path="res://textures/f98e4384bf9ba6c8fb59a38d149493ac.jpg" id="2_f5h5l"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s0id8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvctw"]
+albedo_texture = ExtResource("2_f5h5l")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hdxfe"]
+
+[node name="Barrel" type="RigidBody3D"]
+script = ExtResource("1_vf57c")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_s0id8")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_bvctw")
+mesh = SubResource("CylinderMesh_hdxfe")
