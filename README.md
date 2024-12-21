@@ -27,4 +27,7 @@
 - player rotation
 ### 20/12
 - destroyable barrel
+### 21/12
+- dialogue
+
 

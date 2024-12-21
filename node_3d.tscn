@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://jnm3d7m8hbn1"]
+[gd_scene load_steps=22 format=3 uid="uid://jnm3d7m8hbn1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gidrc"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://lucy_01.png" id="2_afol4"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bscbluvm33tom" path="res://dragoncito.tscn" id="5_0rybu"]
 [ext_resource type="PackedScene" uid="uid://1qfcnxvbtpub" path="res://Ivy.tscn" id="6_jm4br"]
 [ext_resource type="PackedScene" uid="uid://buvwp2u8lq1vd" path="res://barrel.tscn" id="7_pwpmg"]
+[ext_resource type="Texture2D" uid="uid://cxnlxryqewq0s" path="res://textures/gabriela_01.png" id="8_heiuk"]
+[ext_resource type="Script" path="res://area_diag.gd" id="9_62h6j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbj2s"]
 
@@ -115,6 +117,9 @@ size = Vector3(1.00537, 1, 1)
 
 [sub_resource type="Environment" id="Environment_vmlwl"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dsnp0"]
+size = Vector3(9.98898, 1, 9.77734)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" type="CharacterBody3D" parent="."]
@@ -167,6 +172,18 @@ libraries = {
 }
 playback_auto_capture_ease_type = 2
 
+[node name="Ground2" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 13.2856, -0.956452, 0)
+material_override = SubResource("StandardMaterial3D_1nsj4")
+mesh = SubResource("BoxMesh_ju6kx")
+skeleton = NodePath("../Ground")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00268555, 0, 0)
+shape = SubResource("BoxShape3D_jdt5q")
+
 [node name="Ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -0.478226, 0)
 material_override = SubResource("StandardMaterial3D_1nsj4")
@@ -204,3 +221,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84776, 0, -4.35729)
 
 [node name="barrel" parent="." instance=ExtResource("7_pwpmg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.20521, 0, 0.44791)
+
+[node name="boss_diag" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="boss_diag"]
+offset_left = 412.0
+offset_top = 569.0
+offset_right = 549.0
+offset_bottom = 592.0
+text = "Ni un brillo pela'o"
+
+[node name="TextureRect" type="TextureRect" parent="boss_diag"]
+offset_left = 6.0
+offset_top = 425.0
+offset_right = 1234.0
+offset_bottom = 2081.0
+scale = Vector2(0.285, 0.285)
+texture = ExtResource("2_afol4")
+flip_h = true
+
+[node name="TextureRect2" type="TextureRect" parent="boss_diag"]
+offset_left = 580.0
+offset_top = 387.0
+offset_right = 1808.0
+offset_bottom = 2043.0
+scale = Vector2(0.49, 0.49)
+texture = ExtResource("8_heiuk")
+flip_h = true
+
+[node name="area_diag" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3197, 0, 0)
+script = ExtResource("9_62h6j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="area_diag"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0314484, 0, 0.0986328)
+shape = SubResource("BoxShape3D_dsnp0")
