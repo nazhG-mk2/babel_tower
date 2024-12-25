@@ -11,3 +11,9 @@ func _on_player_enter(body) -> void:
 	if body.name == "Player":  # Verifica si el jugador entra
 		print('mostrando dialogo', diag.visible)
 		diag.visible = true  # Activa el CanvasLayer para mostrar los diálogos
+
+
+func _process(_delta):
+	if Input.is_action_just_pressed("attack"):
+		print("Hide dialog")
+		diag.visible = false

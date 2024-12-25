@@ -29,5 +29,7 @@
 - destroyable barrel
 ### 21/12
 - dialogue
+### 25/12
+- press Z to end dialogue
 
 

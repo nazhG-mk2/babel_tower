@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://jnm3d7m8hbn1"]
+[gd_scene load_steps=24 format=3 uid="uid://jnm3d7m8hbn1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gidrc"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://lucy_01.png" id="2_afol4"]
@@ -117,6 +117,15 @@ size = Vector3(1.00537, 1, 1)
 
 [sub_resource type="Environment" id="Environment_vmlwl"]
 
+[sub_resource type="Gradient" id="Gradient_ew02i"]
+offsets = PackedFloat32Array(0, 0.617486, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.295082, 0.295082, 0.295082, 0.704918, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uvk27"]
+gradient = SubResource("Gradient_ew02i")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_dsnp0"]
 size = Vector3(9.98898, 1, 9.77734)
 
@@ -224,6 +233,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.20521, 0, 0.44791)
 
 [node name="boss_diag" type="CanvasLayer" parent="."]
 visible = false
+
+[node name="TextureRect3" type="TextureRect" parent="boss_diag"]
+offset_left = 6.0
+offset_top = 439.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("GradientTexture2D_uvk27")
 
 [node name="Label" type="Label" parent="boss_diag"]
 offset_left = 412.0
