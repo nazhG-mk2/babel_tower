@@ -31,5 +31,6 @@
 - dialogue
 ### 25/12
 - press Z to end dialogue
-
+### 26/12
+- now Ivy flip the sprite when shooting & projectile are shooted to the player position
 
