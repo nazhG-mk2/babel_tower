@@ -33,4 +33,6 @@
 - press Z to end dialogue
 ### 26/12
 - now Ivy flip the sprite when shooting & projectile are shooted to the player position
+### 27/12
+- player can dash ( X key )
 

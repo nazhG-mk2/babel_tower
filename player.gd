@@ -8,6 +8,12 @@ const JUMP_VELOCITY = 6
 @export var attack_cooldown: float = 0.5
 var can_attack: bool = true
 
+# TODO: nos linear dash velocity
+var dash_speed = 4.0
+var dash_duration = 0.2
+var is_dashing = false
+var dash_time_left = 0
+
 func _ready():
 	# Conecta la señal cuando un cuerpo entra en el área
 	$Area3D.body_entered.connect(_on_body_entered)
@@ -38,6 +44,14 @@ func _on_body_entered(body):
 		print("Inflicted", attack_damage, "damage to", body)
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("dash") and not is_dashing:
+		start_dash()
+	
+	if is_dashing:
+		dash_time_left -= delta
+		if dash_time_left <= 0:
+			stop_dash()
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -50,17 +64,27 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var speed := SPEED
+	if is_dashing:
+		speed += dash_speed
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
 		_update_sprite_flip(input_dir.x)  # Actualiza el sprite según el movimiento horizontal
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.z = move_toward(velocity.z, 0, speed)
 
 	move_and_slide()
 
-func _process(delta):
+func start_dash():
+	is_dashing = true
+	dash_time_left = dash_duration
+
+func stop_dash():
+	is_dashing = false
+
+func _process(_delta):
 	if Input.is_action_just_pressed("attack"):
 		attack()
 		

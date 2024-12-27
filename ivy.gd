@@ -23,6 +23,7 @@ func spawn_projectile_periodically():
 		projectile_instance.position = $Spawner.position # Ajusta la posición local
 
 		var player_position = player.global_transform.origin
+		player_position.y += 1.0
 		var direction = (player_position - $Spawner.global_transform.origin).normalized()
 
 		# Ajustar la dirección del proyectil
