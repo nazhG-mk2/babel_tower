@@ -37,4 +37,6 @@
 - player can dash ( X key )
 ### 1/1
 - dragon slayable
+### 2/1
+- breast text animation
 

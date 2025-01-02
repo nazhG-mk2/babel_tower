@@ -1,0 +1,110 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2t0ako31r0q0"]
+
+[ext_resource type="Texture2D" uid="uid://c3wihjtfw07gj" path="res://textures/succubus_01.png" id="1_4vsgi"]
+
+[sub_resource type="SkeletonModification2DJiggle" id="SkeletonModification2DJiggle_m4l42"]
+target_nodepath = NodePath("../Target/JBL")
+jiggle_data_chain_length = 3
+joint_data/0/bone_index = 1
+joint_data/0/bone2d_node = NodePath("Chest/LL")
+joint_data/0/override_defaults = false
+joint_data/1/bone_index = 2
+joint_data/1/bone2d_node = NodePath("Chest/LL/ML")
+joint_data/1/override_defaults = false
+joint_data/2/bone_index = 3
+joint_data/2/bone2d_node = NodePath("Chest/LL/ML/TL")
+joint_data/2/override_defaults = false
+
+[sub_resource type="SkeletonModification2DJiggle" id="SkeletonModification2DJiggle_f4ra2"]
+target_nodepath = NodePath("../Target/JBR")
+jiggle_data_chain_length = 3
+joint_data/0/bone_index = 4
+joint_data/0/bone2d_node = NodePath("Chest/LR")
+joint_data/0/override_defaults = false
+joint_data/1/bone_index = 5
+joint_data/1/bone2d_node = NodePath("Chest/LR/MR")
+joint_data/1/override_defaults = false
+joint_data/2/bone_index = 6
+joint_data/2/bone2d_node = NodePath("Chest/LR/MR/TR")
+joint_data/2/override_defaults = false
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_eoue8"]
+enabled = true
+modification_count = 2
+modifications/0 = SubResource("SkeletonModification2DJiggle_m4l42")
+modifications/1 = SubResource("SkeletonModification2DJiggle_f4ra2")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-14, 47)
+texture = ExtResource("1_4vsgi")
+
+[node name="Target" type="Node2D" parent="."]
+
+[node name="JBL" type="Node2D" parent="Target"]
+position = Vector2(-71, 42)
+
+[node name="JBR" type="Node2D" parent="Target"]
+position = Vector2(107, 35)
+
+[node name="Polygon" type="Node2D" parent="."]
+
+[node name="Beast" type="Polygon2D" parent="Polygon"]
+position = Vector2(-312, -256)
+texture = ExtResource("1_4vsgi")
+skeleton = NodePath("../../Breast")
+polygon = PackedVector2Array(269.914, 227.92, 249.053, 237.191, 242.872, 261.915, 254.462, 285.093, 277.64, 293.592, 300.046, 286.638, 307.772, 281.23, 320.906, 287.411, 345.63, 292.819, 366.49, 285.093, 375.761, 273.504, 377.307, 250.326, 361.854, 228.693, 350.265, 223.284, 265.557, 245.987, 263.638, 269.494, 284.266, 267.095, 289.543, 246.946, 334.158, 274.771, 332.239, 249.345, 308.253, 259.899, 310.651, 234.473, 356.22, 248.684, 357.409, 269.3)
+uv = PackedVector2Array(269.914, 227.92, 249.053, 237.191, 242.872, 261.915, 254.462, 285.093, 277.64, 293.592, 300.046, 286.638, 307.772, 281.23, 320.906, 287.411, 345.63, 292.819, 366.49, 285.093, 375.761, 273.504, 377.307, 250.326, 361.854, 228.693, 350.265, 223.284, 265.557, 245.987, 263.638, 269.494, 284.266, 267.095, 289.543, 246.946, 334.158, 274.771, 332.239, 249.345, 308.253, 259.899, 310.651, 234.473, 356.22, 248.684, 357.409, 269.3)
+polygons = [PackedInt32Array(18, 7, 8), PackedInt32Array(18, 9, 8), PackedInt32Array(19, 13, 12), PackedInt32Array(19, 20, 18), PackedInt32Array(7, 20, 18), PackedInt32Array(6, 7, 20), PackedInt32Array(5, 6, 20), PackedInt32Array(4, 16, 5), PackedInt32Array(16, 20, 5), PackedInt32Array(15, 16, 4), PackedInt32Array(3, 15, 4), PackedInt32Array(3, 2, 15), PackedInt32Array(15, 14, 2), PackedInt32Array(2, 1, 14), PackedInt32Array(14, 0, 1), PackedInt32Array(14, 16, 15), PackedInt32Array(14, 17, 16), PackedInt32Array(0, 17, 14), PackedInt32Array(17, 20, 16), PackedInt32Array(17, 19, 20), PackedInt32Array(19, 21, 13), PackedInt32Array(19, 17, 21), PackedInt32Array(21, 0, 17), PackedInt32Array(21, 13, 0), PackedInt32Array(18, 23, 9), PackedInt32Array(19, 23, 18), PackedInt32Array(22, 12, 19), PackedInt32Array(22, 23, 19), PackedInt32Array(22, 12, 11), PackedInt32Array(22, 23, 11), PackedInt32Array(10, 11, 23), PackedInt32Array(10, 9, 23)]
+bones = ["Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0.51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.51, 0.51, 0, 0), "Chest/LL", PackedFloat32Array(0.51, 0, 0, 0, 0, 0.51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.51, 0, 0, 0, 0, 0, 0), "Chest/LL/ML", PackedFloat32Array(0, 0.51, 0, 0, 0.51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.51, 0, 0.51, 0, 0, 0, 0, 0, 0, 0), "Chest/LL/ML/TL", PackedFloat32Array(0, 0, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0, 0), "Chest/LR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0.51, 0, 0, 0, 0, 0, 0.51, 0, 0, 0, 0, 0, 0.51, 0, 0, 0, 0), "Chest/LR/MR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0.51, 0, 0, 0, 0.51, 0, 0, 0, 0, 0, 0.51, 0, 0, 0, 0.51, 0), "Chest/LR/MR/TR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5)]
+internal_vertex_count = 10
+
+[node name="Body" type="Polygon2D" parent="Polygon"]
+texture = ExtResource("1_4vsgi")
+
+[node name="Breast" type="Skeleton2D" parent="."]
+modification_stack = SubResource("SkeletonModificationStack2D_eoue8")
+
+[node name="Chest" type="Bone2D" parent="Breast"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="LL" type="Bone2D" parent="Breast/Chest"]
+rotation = 2.83287
+scale = Vector2(1.51503, 1.51503)
+rest = Transform2D(-1.4434, 0.460324, -0.460324, -1.4434, 0, 0)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ML" type="Bone2D" parent="Breast/Chest/LL"]
+position = Vector2(12.1705, -0.112302)
+rotation = 0.117979
+scale = Vector2(0.999997, 0.999997)
+rest = Transform2D(0.993045, 0.117705, -0.117705, 0.993045, 12.1705, -0.112302)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="TL" type="Bone2D" parent="Breast/Chest/LL/ML"]
+position = Vector2(13.8728, -1.77439)
+rotation = -0.127207
+scale = Vector2(0.999937, 0.999937)
+rest = Transform2D(0.991861, -0.126856, 0.126856, 0.991861, 13.8728, -1.7744)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="LR" type="Bone2D" parent="Breast/Chest"]
+rotation = 0.276488
+scale = Vector2(1.515, 1.515)
+rest = Transform2D(1.45746, 0.413564, -0.413564, 1.45746, 0, 0)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="MR" type="Bone2D" parent="Breast/Chest/LR"]
+position = Vector2(12.1707, -0.112314)
+rotation = 0.118006
+scale = Vector2(1.00001, 1.00001)
+rest = Transform2D(0.993058, 0.117733, -0.117733, 0.993058, 12.1707, -0.112314)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="TR" type="Bone2D" parent="Breast/Chest/LR/MR"]
+position = Vector2(13.8734, -1.77479)
+rotation = -0.127235
+scale = Vector2(0.999995, 0.999995)
+rest = Transform2D(0.991906, -0.126889, 0.126889, 0.991906, 13.8733, -1.77482)
+metadata/_local_pose_override_enabled_ = true
