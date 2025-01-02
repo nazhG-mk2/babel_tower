@@ -13,6 +13,15 @@ func _ready():
 	start_position = global_transform.origin
 	player = get_parent().get_node("Player")
 	phase_offset = randf() * TAU
+	
+func receive_damage(amount: int):
+	explode()
+
+func explode():
+	print("Drag destroyed!")
+	# Aquí puedes añadir una animación, efectos de partículas, etc.
+	queue_free()
+
 
 func _process(delta):
 	# Movimiento en Y
