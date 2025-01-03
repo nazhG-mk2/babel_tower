@@ -8,6 +8,8 @@ const JUMP_VELOCITY = 6
 @export var attack_cooldown: float = 0.5
 var can_attack: bool = true
 
+@onready var succubus = $Viewport/Succubus  # Cambia la ruta según tu jerarquía
+
 # TODO: nos linear dash velocity
 var dash_speed = 4.0
 var dash_duration = 0.2
@@ -87,6 +89,7 @@ func stop_dash():
 func _process(_delta):
 	if Input.is_action_just_pressed("attack"):
 		attack()
+	succubus.adjust_nodes(velocity.y)
 		
 func _update_sprite_flip(direction_x: float):
 	if direction_x > 0:  # Moviéndose a la derecha

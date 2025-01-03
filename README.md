@@ -39,4 +39,6 @@
 - dragon slayable
 ### 2/1
 - breast text animation
+### 3/1
+- tits physics
 

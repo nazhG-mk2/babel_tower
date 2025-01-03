@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://jnm3d7m8hbn1"]
+[gd_scene load_steps=26 format=3 uid="uid://jnm3d7m8hbn1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gidrc"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://lucy_01.png" id="2_afol4"]
 [ext_resource type="Script" path="res://spring_arm_3d.gd" id="3_660u0"]
 [ext_resource type="Texture2D" uid="uid://c2468b32j8sqa" path="res://textures/suelo_ladrillo.jpeg" id="4_cwoml"]
+[ext_resource type="PackedScene" uid="uid://b2t0ako31r0q0" path="res://test_breast.tscn" id="4_qv7jc"]
 [ext_resource type="PackedScene" uid="uid://bscbluvm33tom" path="res://dragoncito.tscn" id="5_0rybu"]
 [ext_resource type="PackedScene" uid="uid://1qfcnxvbtpub" path="res://Ivy.tscn" id="6_jm4br"]
 [ext_resource type="PackedScene" uid="uid://buvwp2u8lq1vd" path="res://barrel.tscn" id="7_pwpmg"]
@@ -11,6 +12,9 @@
 [ext_resource type="Script" path="res://area_diag.gd" id="9_62h6j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbj2s"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ii7dj"]
+viewport_path = NodePath("Player/Viewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hkmbl"]
 size = Vector3(1, 1.48633, 1)
@@ -144,7 +148,7 @@ billboard = 2
 shaded = true
 alpha_cut = 2
 texture_filter = 4
-texture = ExtResource("2_afol4")
+texture = SubResource("ViewportTexture_ii7dj")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Player"]
 script = ExtResource("3_660u0")
@@ -180,6 +184,14 @@ libraries = {
 "": SubResource("AnimationLibrary_jbq5h")
 }
 playback_auto_capture_ease_type = 2
+
+[node name="Viewport" type="SubViewport" parent="Player"]
+transparent_bg = true
+size = Vector2i(800, 1600)
+
+[node name="Succubus" parent="Player/Viewport" instance=ExtResource("4_qv7jc")]
+position = Vector2(400, 800)
+scale = Vector2(2.55, 2.55)
 
 [node name="Ground2" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 13.2856, -0.956452, 0)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2t0ako31r0q0"]
+[gd_scene load_steps=6 format=3 uid="uid://b2t0ako31r0q0"]
 
 [ext_resource type="Texture2D" uid="uid://c3wihjtfw07gj" path="res://textures/succubus_01.png" id="1_4vsgi"]
+[ext_resource type="Script" path="res://test_breast.gd" id="1_r8p4i"]
 
 [sub_resource type="SkeletonModification2DJiggle" id="SkeletonModification2DJiggle_m4l42"]
 target_nodepath = NodePath("../Target/JBL")
@@ -34,7 +35,8 @@ modification_count = 2
 modifications/0 = SubResource("SkeletonModification2DJiggle_m4l42")
 modifications/1 = SubResource("SkeletonModification2DJiggle_f4ra2")
 
-[node name="Node2D" type="Node2D"]
+[node name="Succubus" type="Node2D"]
+script = ExtResource("1_r8p4i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-14, 47)
@@ -43,10 +45,10 @@ texture = ExtResource("1_4vsgi")
 [node name="Target" type="Node2D" parent="."]
 
 [node name="JBL" type="Node2D" parent="Target"]
-position = Vector2(-71, 42)
+position = Vector2(-90, 40)
 
 [node name="JBR" type="Node2D" parent="Target"]
-position = Vector2(107, 35)
+position = Vector2(90, 40)
 
 [node name="Polygon" type="Node2D" parent="."]
 
