@@ -14,11 +14,11 @@ func _ready():
 func adjust_nodes(v: int):
 	
 	if v > 0: # subiendo
-		jbr.position = jbr_initial_pos + Vector2(0, 60)  # Ajusta según sea necesario
-		jbl.position = jbl_initial_pos + Vector2(0, 60)
-	elif v > 0: # bajando
-		jbr.position = jbr_initial_pos - Vector2(0, 50)
-		jbl.position = jbl_initial_pos - Vector2(0, 50)
+		jbr.position = jbr_initial_pos + Vector2(0, 40)  # Ajusta según sea necesario
+		jbl.position = jbl_initial_pos + Vector2(0, 40)
+	elif v < 0: # bajando
+		jbr.position = jbr_initial_pos - Vector2(0, 40)
+		jbl.position = jbl_initial_pos - Vector2(0, 40)
 	else:
 		jbr.position = jbr_initial_pos
 		jbl.position = jbl_initial_pos
