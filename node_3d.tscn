@@ -1,8 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://jnm3d7m8hbn1"]
+[gd_scene load_steps=27 format=3 uid="uid://jnm3d7m8hbn1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gidrc"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://lucy_01.png" id="2_afol4"]
+[ext_resource type="Texture2D" uid="uid://d3m6g8xp25dds" path="res://textures/assets/demong_front.png" id="2_akj4w"]
 [ext_resource type="Script" path="res://spring_arm_3d.gd" id="3_660u0"]
+[ext_resource type="Texture2D" uid="uid://0f3fxfuf30b6" path="res://textures/assets/wings.png" id="3_d5q4u"]
 [ext_resource type="Texture2D" uid="uid://c2468b32j8sqa" path="res://textures/suelo_ladrillo.jpeg" id="4_cwoml"]
 [ext_resource type="PackedScene" uid="uid://b2t0ako31r0q0" path="res://test_breast.tscn" id="4_qv7jc"]
 [ext_resource type="PackedScene" uid="uid://bscbluvm33tom" path="res://dragoncito.tscn" id="5_0rybu"]
@@ -12,9 +14,6 @@
 [ext_resource type="Script" path="res://area_diag.gd" id="9_62h6j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbj2s"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_ii7dj"]
-viewport_path = NodePath("Player/Viewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hkmbl"]
 size = Vector3(1, 1.48633, 1)
@@ -143,12 +142,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13, 0)
 shape = SubResource("CapsuleShape3D_rbj2s")
 
 [node name="Sprite3D" type="Sprite3D" parent="Player"]
-transform = Transform3D(0.1, 0, 0, 0, 0.0967055, 0.0254568, 0, -0.0254568, 0.0967055, 0, 0.925313, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.145058, 0.0381852, 0, -0.0381852, 0.145058, 0.00189841, 1.05865, 0.000941545)
 billboard = 2
 shaded = true
 alpha_cut = 2
-texture_filter = 4
-texture = SubResource("ViewportTexture_ii7dj")
+texture_filter = 1
+texture = ExtResource("2_akj4w")
+
+[node name="Sprite3D" type="Sprite3D" parent="Player/Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0.0518546, -0.196986)
+texture_filter = 1
+texture = ExtResource("3_d5q4u")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Player"]
 script = ExtResource("3_660u0")
