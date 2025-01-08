@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://jnm3d7m8hbn1"]
+[gd_scene load_steps=27 format=3 uid="uid://jnm3d7m8hbn1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gidrc"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://lucy_01.png" id="2_afol4"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://buvwp2u8lq1vd" path="res://barrel.tscn" id="7_pwpmg"]
 [ext_resource type="Texture2D" uid="uid://cxnlxryqewq0s" path="res://textures/gabriela_01.png" id="8_heiuk"]
 [ext_resource type="Script" path="res://area_diag.gd" id="9_62h6j"]
+[ext_resource type="PackedScene" uid="uid://dmoi7eyujn0tq" path="res://Boss_01.tscn" id="11_i62p8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbj2s"]
 
@@ -285,3 +286,6 @@ script = ExtResource("9_62h6j")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="area_diag"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0314484, 0, 0.0986328)
 shape = SubResource("BoxShape3D_dsnp0")
+
+[node name="Node3D" parent="." instance=ExtResource("11_i62p8")]
+transform = Transform3D(0.668586, 0, 0.743635, 0, 1, 0, -0.743635, 0, 0.668586, 10.3477, 1.99748, 1.53847)
