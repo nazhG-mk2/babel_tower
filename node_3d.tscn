@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://jnm3d7m8hbn1"]
+[gd_scene load_steps=29 format=3 uid="uid://jnm3d7m8hbn1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gidrc"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://lucy_01.png" id="2_afol4"]
 [ext_resource type="Texture2D" uid="uid://d3m6g8xp25dds" path="res://textures/assets/demong_front.png" id="2_akj4w"]
+[ext_resource type="Texture2D" uid="uid://w6m21vxqxnj5" path="res://textures/assets/demong_back.png" id="2_nk4ba"]
 [ext_resource type="Script" path="res://spring_arm_3d.gd" id="3_660u0"]
 [ext_resource type="Texture2D" uid="uid://0f3fxfuf30b6" path="res://textures/assets/wings.png" id="3_d5q4u"]
 [ext_resource type="Texture2D" uid="uid://c2468b32j8sqa" path="res://textures/suelo_ladrillo.jpeg" id="4_cwoml"]
@@ -142,16 +143,19 @@ script = ExtResource("1_gidrc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13, 0)
 shape = SubResource("CapsuleShape3D_rbj2s")
 
-[node name="Sprite3D" type="Sprite3D" parent="Player"]
-transform = Transform3D(0.15, 0, 0, 0, 0.145058, 0.0381852, 0, -0.0381852, 0.145058, 0.00189841, 1.05865, 0.000941545)
-billboard = 2
-shaded = true
-alpha_cut = 2
+[node name="Frente" type="Sprite3D" parent="Player"]
+transform = Transform3D(0.15, 0, 0, 0, 0.14509, 0.0380637, 0, -0.0380637, 0.14509, 0, 1.059, 0.001)
 texture_filter = 1
 texture = ExtResource("2_akj4w")
 
-[node name="Sprite3D" type="Sprite3D" parent="Player/Sprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0.0518546, -0.196986)
+[node name="Espalda" type="Sprite3D" parent="Player"]
+transform = Transform3D(0.15, 0, 0, 0, 0.145058, 0.0381852, 0, -0.0381852, 0.145058, 0, 1.059, 0.001)
+visible = false
+texture_filter = 1
+texture = ExtResource("2_nk4ba")
+
+[node name="Wings" type="Sprite3D" parent="Player"]
+transform = Transform3D(0.15, 0, 0, 0, 0.14509, 0.0380637, 0, -0.0380637, 0.14509, 0, 1.059, 0)
 texture_filter = 1
 texture = ExtResource("3_d5q4u")
 
@@ -165,7 +169,7 @@ fov = 50.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19012, 0)
-light_color = Color(0.948826, 0.478385, 0.832196, 1)
+light_color = Color(0.596078, 0.105882, 0.0862745, 1)
 light_energy = 0.2
 light_specular = 0.0
 omni_range = 1.20553

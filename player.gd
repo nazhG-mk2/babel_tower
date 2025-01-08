@@ -10,11 +10,21 @@ var can_attack: bool = true
 
 @onready var succubus = $Viewport/Succubus  # Cambia la ruta según tu jerarquía
 
+# Referencia al nodo Wing
+@onready var wing = $Wing
+#var wing_start_rotation: Vector3 # Rotación inicial del Wing
+
+@export var wing_up_position: Vector3 = Vector3(0, 1.059, 0)  # Posición cuando el jugador se mueve hacia arriba
+@export var wing_down_position: Vector3 = Vector3(0, 1.059, 0.1)  # Posición cuando el jugador se mueve hacia abajo
+@export var wing_left_rotation_offset: Vector3 = Vector3(0, -21.2, 0)  # Rotación hacia arriba (en grados)
+@export var wing_right_rotation_offset: Vector3 = Vector3(0, 21.2, 0)  # Rotación hacia abajo (en grados)
+
 # TODO: nos linear dash velocity
 var dash_speed = 4.0
 var dash_duration = 0.2
 var is_dashing = false
 var dash_time_left = 0
+
 
 func _ready():
 	# Conecta la señal cuando un cuerpo entra en el área
@@ -53,6 +63,18 @@ func _physics_process(delta: float) -> void:
 		dash_time_left -= delta
 		if dash_time_left <= 0:
 			stop_dash()
+
+	if velocity.z > 0:  # Hacia abajo
+		$Espalda.visible = false
+		$Frente.visible = true
+		$Wings.flip_h = true
+		$Wings.position = wing_up_position
+	if velocity.z < 0:  # Hacia arriba
+		$Frente.visible = false 
+		$Espalda.visible = true
+		$Wings.flip_h = false
+		$Wings.position = wing_down_position
+
 
 	# Add the gravity.
 	if not is_on_floor():
@@ -93,8 +115,10 @@ func _process(_delta):
 		
 func _update_sprite_flip(direction_x: float):
 	if direction_x > 0:  # Moviéndose a la derecha
-		$Sprite3D.flip_h = true
+		$Frente.flip_h = true
+		#wing.rotation_degrees = wing_left_rotation_offset
 		$Area3D.rotation_degrees.y = 0
 	elif direction_x < 0:  # Moviéndose a la izquierda
-		$Sprite3D.flip_h = false
+		$Frente.flip_h = false
+		#wing.rotation_degrees = wing_right_rotation_offset
 		$Area3D.rotation_degrees.y = 180
