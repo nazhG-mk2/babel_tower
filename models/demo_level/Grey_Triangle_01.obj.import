@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c4p5hwecdkg46"
+path="res://.godot/imported/Grey_Triangle_01.obj-2488b5e8761cc341ae89f7ba55d43297.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Grey_Triangle_01.obj-2488b5e8761cc341ae89f7ba55d43297.mesh"]
+
+source_file="res://models/demo_level/Grey_Triangle_01.obj"
+dest_files=["res://.godot/imported/Grey_Triangle_01.obj-2488b5e8761cc341ae89f7ba55d43297.mesh", "res://.godot/imported/Grey_Triangle_01.obj-2488b5e8761cc341ae89f7ba55d43297.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -11,7 +11,7 @@ var can_attack: bool = true
 @onready var succubus = $Viewport/Succubus  # Cambia la ruta según tu jerarquía
 
 # Referencia al nodo Wing
-@onready var wing = $Wing
+@onready var wing = $Wings
 #var wing_start_rotation: Vector3 # Rotación inicial del Wing
 
 @export var wing_up_position: Vector3 = Vector3(0, 1.059, 0)  # Posición cuando el jugador se mueve hacia arriba

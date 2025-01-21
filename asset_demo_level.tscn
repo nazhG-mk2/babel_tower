@@ -1,0 +1,338 @@
+[gd_scene load_steps=68 format=3 uid="uid://bn42gneyfjmfx"]
+
+[ext_resource type="ArrayMesh" uid="uid://cmgw0rl3mvese" path="res://models/demo_level/Banner_01.obj" id="1_sjn7d"]
+[ext_resource type="ArrayMesh" uid="uid://0horsm5tcce0" path="res://models/demo_level/Castle_Wall_01.obj" id="2_chhrc"]
+[ext_resource type="ArrayMesh" uid="uid://dyw5af6csxp2j" path="res://models/demo_level/Grey_Arch_01.obj" id="3_4khva"]
+[ext_resource type="ArrayMesh" uid="uid://btjclm8xh21am" path="res://models/demo_level/Grey_Border_Wall_01.obj" id="4_cp43y"]
+[ext_resource type="ArrayMesh" uid="uid://1y1qp331wicy" path="res://models/demo_level/Grey_Broken_Wall_01.obj" id="5_0abtg"]
+[ext_resource type="ArrayMesh" uid="uid://bsbops1w4d1ch" path="res://models/demo_level/Grey_Corner_01.obj" id="6_vixhe"]
+[ext_resource type="ArrayMesh" uid="uid://72ecp6t48gqo" path="res://models/demo_level/Grey_Door_Round_01.obj" id="7_nxiw8"]
+[ext_resource type="ArrayMesh" uid="uid://dc2nggnb3rnbx" path="res://models/demo_level/Grey_Door_Square_01.obj" id="8_6b3ha"]
+[ext_resource type="ArrayMesh" uid="uid://cet44ao0yqtxc" path="res://models/demo_level/Grey_Pole_01.obj" id="9_bxyo8"]
+[ext_resource type="ArrayMesh" uid="uid://7himspkybeec" path="res://models/demo_level/Grey_Short_Wall_01.obj" id="10_4hf8x"]
+[ext_resource type="ArrayMesh" uid="uid://vsip4qkc862" path="res://models/demo_level/Grey_Slanted_Pole_01.obj" id="11_q4apd"]
+[ext_resource type="ArrayMesh" uid="uid://3ny41hw4nkvo" path="res://models/demo_level/Grey_Slanted_Wall_01.obj" id="12_8j4x2"]
+[ext_resource type="ArrayMesh" uid="uid://cedcimyv82ja2" path="res://models/demo_level/Grey_Small_Wall_01.obj" id="13_7ddjs"]
+[ext_resource type="ArrayMesh" uid="uid://c4p5hwecdkg46" path="res://models/demo_level/Grey_Triangle_01.obj" id="14_fftih"]
+[ext_resource type="ArrayMesh" uid="uid://c61j3jsnwo4uf" path="res://models/demo_level/Grey_Wall_01.obj" id="15_tph24"]
+[ext_resource type="ArrayMesh" uid="uid://dc125crqh2yx8" path="res://models/demo_level/Grey_Window_Narrow_01.obj" id="16_s6a0e"]
+[ext_resource type="ArrayMesh" uid="uid://dbtmwpvsdq0s4" path="res://models/demo_level/Grey_Window_Round_01.obj" id="17_ggcpj"]
+[ext_resource type="ArrayMesh" uid="uid://b71eq3ghd8koh" path="res://models/demo_level/Grey_Window_Round_Long_01.obj" id="18_0qiyw"]
+[ext_resource type="ArrayMesh" uid="uid://kkf7m4usik0q" path="res://models/demo_level/Grey_Window_Round_Sill_01.obj" id="19_irl4x"]
+[ext_resource type="ArrayMesh" uid="uid://dvphpn1wtn3xl" path="res://models/demo_level/Grey_Window_Square_01.obj" id="20_c8ie7"]
+[ext_resource type="ArrayMesh" uid="uid://cvc37isg6x1ua" path="res://models/demo_level/Grey_Window_Square_Sill_01.obj" id="21_m7wwa"]
+[ext_resource type="ArrayMesh" uid="uid://dhu1vanmwkijr" path="res://models/demo_level/Iron_Door_01.obj" id="22_hkp6u"]
+[ext_resource type="ArrayMesh" uid="uid://nx6v8vs2w86p" path="res://models/demo_level/Lightpost_01.obj" id="23_083wd"]
+[ext_resource type="ArrayMesh" uid="uid://dyarerlt0trfn" path="res://models/demo_level/Plate_Corner_01.obj" id="24_62ush"]
+[ext_resource type="ArrayMesh" uid="uid://dxvhwsoqigfkf" path="res://models/demo_level/Plate_Curve_01.obj" id="25_0iqye"]
+[ext_resource type="ArrayMesh" uid="uid://c0rqsjrl0hq8a" path="res://models/demo_level/Plate_Pavement_01.obj" id="26_i3nk2"]
+[ext_resource type="ArrayMesh" uid="uid://cvjgnb7ll8kxh" path="res://models/demo_level/Plate_Road_01.obj" id="27_g6ui2"]
+[ext_resource type="ArrayMesh" uid="uid://cwuk626trjci7" path="res://models/demo_level/Plate_Sidewalk_01.obj" id="28_4s3s0"]
+[ext_resource type="ArrayMesh" uid="uid://6dic1nflhjmo" path="res://models/demo_level/Plate_Wood_01.obj" id="29_nu7ba"]
+[ext_resource type="ArrayMesh" uid="uid://bqvqjj45kiewn" path="res://models/demo_level/Roof_Corner_Green_01.obj" id="30_5wgn8"]
+[ext_resource type="ArrayMesh" uid="uid://csfyqj06w0jdr" path="res://models/demo_level/Roof_Corner_Red_01.obj" id="31_aeqe3"]
+[ext_resource type="ArrayMesh" uid="uid://bpv4om6fr3phy" path="res://models/demo_level/Roof_Inner_Corner_Green_01.obj" id="32_gncgi"]
+[ext_resource type="ArrayMesh" uid="uid://d4f7trgbmprox" path="res://models/demo_level/Roof_Inner_Corner_Red_01.obj" id="33_bphjp"]
+[ext_resource type="ArrayMesh" uid="uid://c0w7rw25w53sv" path="res://models/demo_level/Roof_Point_Green_01.obj" id="34_a7npa"]
+[ext_resource type="ArrayMesh" uid="uid://derngb742kemi" path="res://models/demo_level/Roof_Point_Red_01.obj" id="35_bun8c"]
+[ext_resource type="ArrayMesh" uid="uid://b8n8lu2nbno5u" path="res://models/demo_level/Roof_Slant_Green_01.obj" id="36_al06m"]
+[ext_resource type="ArrayMesh" uid="uid://bfldbk6ohlivr" path="res://models/demo_level/Roof_Slant_Red_01.obj" id="37_64dvk"]
+[ext_resource type="ArrayMesh" uid="uid://bgbhtevsrnh7q" path="res://models/demo_level/Roof_Straight_Green_01.obj" id="38_ychij"]
+[ext_resource type="ArrayMesh" uid="uid://d3kyc0f6fb70h" path="res://models/demo_level/Roof_Straight_Red_01.obj" id="39_658nm"]
+[ext_resource type="ArrayMesh" uid="uid://b4dxjbyg1wrtq" path="res://models/demo_level/Shield_Green_01.obj" id="40_p22uh"]
+[ext_resource type="ArrayMesh" uid="uid://bwf70k7gxgi3o" path="res://models/demo_level/Shield_Red_01.obj" id="41_xg1ub"]
+[ext_resource type="ArrayMesh" uid="uid://dyqmnbu83m20q" path="res://models/demo_level/Stairs_Stone_01.obj" id="42_jrtaq"]
+[ext_resource type="ArrayMesh" uid="uid://qodnww2hm4ud" path="res://models/demo_level/Stairs_Wood_01.obj" id="43_qbxbd"]
+[ext_resource type="ArrayMesh" uid="uid://bs0qgd8kdglnj" path="res://models/demo_level/Tree_01.obj" id="44_0amcl"]
+[ext_resource type="ArrayMesh" uid="uid://ccfnxve6phuci" path="res://models/demo_level/Wood_Arch_01.obj" id="45_lpbpy"]
+[ext_resource type="ArrayMesh" uid="uid://cgh70jd3ibp55" path="res://models/demo_level/Wood_Border_Wall_01.obj" id="46_qainn"]
+[ext_resource type="ArrayMesh" uid="uid://ducj5da43i1lg" path="res://models/demo_level/Wood_Broken_Wall_01.obj" id="47_hf285"]
+[ext_resource type="ArrayMesh" uid="uid://b3slcli37i8rb" path="res://models/demo_level/Wood_Corner_01.obj" id="48_ijnjt"]
+[ext_resource type="ArrayMesh" uid="uid://vyxkdmso4oue" path="res://models/demo_level/Wood_Door_01.obj" id="49_82pb5"]
+[ext_resource type="ArrayMesh" uid="uid://dlsyhahxanyhd" path="res://models/demo_level/Wood_Door_Round_01.obj" id="50_ho08r"]
+[ext_resource type="ArrayMesh" uid="uid://chebvw2itmdug" path="res://models/demo_level/Wood_Door_Square_01.obj" id="51_57p3n"]
+[ext_resource type="ArrayMesh" uid="uid://djyq8k3p6atw1" path="res://models/demo_level/Wood_Pole_01.obj" id="52_gj8ng"]
+[ext_resource type="ArrayMesh" uid="uid://cn7tmt48g5m3p" path="res://models/demo_level/Wood_Railing_01.obj" id="53_x102s"]
+[ext_resource type="ArrayMesh" uid="uid://cbw2tk5qfn8n4" path="res://models/demo_level/Wood_Slanted_Pole_01.obj" id="54_crjek"]
+[ext_resource type="ArrayMesh" uid="uid://bxk3hq8nh1v3m" path="res://models/demo_level/Wood_Slanted_Wall_01.obj" id="55_euthx"]
+[ext_resource type="ArrayMesh" uid="uid://co221ihcy8gjo" path="res://models/demo_level/Wood_Small_Wall_01.obj" id="56_j4wrl"]
+[ext_resource type="ArrayMesh" uid="uid://biipcl5h850am" path="res://models/demo_level/Wood_Tiny_Wall_01.obj" id="57_4jx0f"]
+[ext_resource type="ArrayMesh" uid="uid://du7o7xb2e8ou8" path="res://models/demo_level/Wood_Triangle_01.obj" id="58_56g4c"]
+[ext_resource type="ArrayMesh" uid="uid://4lr23ecv72o5" path="res://models/demo_level/Wood_Wall_01.obj" id="59_jwc8e"]
+[ext_resource type="ArrayMesh" uid="uid://2oa8jbvjssas" path="res://models/demo_level/Wood_Wall_Cross_01.obj" id="60_vgts6"]
+[ext_resource type="ArrayMesh" uid="uid://dcf4dpbaw85tb" path="res://models/demo_level/Wood_Wall_Double_Cross_01.obj" id="61_oe21y"]
+[ext_resource type="ArrayMesh" uid="uid://dtiadfvw5mpnf" path="res://models/demo_level/Wood_Window_Narrow_01.obj" id="62_kisxa"]
+[ext_resource type="ArrayMesh" uid="uid://bfs03v51k4q1h" path="res://models/demo_level/Wood_Window_Round_01.obj" id="63_nj53f"]
+[ext_resource type="ArrayMesh" uid="uid://cfr3y0dy6g38w" path="res://models/demo_level/Wood_Window_Round_Long_01.obj" id="64_82mla"]
+[ext_resource type="ArrayMesh" uid="uid://go5esnlks2n8" path="res://models/demo_level/Wood_Window_Round_Sill_01.obj" id="65_aetyw"]
+[ext_resource type="ArrayMesh" uid="uid://d2oh1co3e1h6e" path="res://models/demo_level/Wood_Window_Square_01.obj" id="66_lg0xu"]
+[ext_resource type="ArrayMesh" uid="uid://dw0r1sbg0rs4w" path="res://models/demo_level/Wood_Window_Square_Sill_01.obj" id="67_qaxat"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Banner01" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_sjn7d")
+
+[node name="CastleWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+mesh = ExtResource("2_chhrc")
+
+[node name="GreyArch01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = ExtResource("3_4khva")
+
+[node name="GreyBorderWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+mesh = ExtResource("4_cp43y")
+
+[node name="GreyBrokenWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+mesh = ExtResource("5_0abtg")
+
+[node name="GreyCorner01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
+mesh = ExtResource("6_vixhe")
+
+[node name="GreyDoorRound01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+mesh = ExtResource("7_nxiw8")
+
+[node name="GreyDoorSquare01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0)
+mesh = ExtResource("8_6b3ha")
+
+[node name="GreyPole01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
+mesh = ExtResource("9_bxyo8")
+
+[node name="GreyShortWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
+mesh = ExtResource("10_4hf8x")
+
+[node name="GreySlantedPole01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
+mesh = ExtResource("11_q4apd")
+
+[node name="GreySlantedWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+mesh = ExtResource("12_8j4x2")
+
+[node name="GreySmallWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+mesh = ExtResource("13_7ddjs")
+
+[node name="GreyTriangle01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 5)
+mesh = ExtResource("14_fftih")
+
+[node name="GreyWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 5)
+mesh = ExtResource("15_tph24")
+
+[node name="GreyWindowNarrow01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 5)
+mesh = ExtResource("16_s6a0e")
+
+[node name="GreyWindowRound01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 5)
+mesh = ExtResource("17_ggcpj")
+
+[node name="GreyWindowRoundLong01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 5)
+mesh = ExtResource("18_0qiyw")
+
+[node name="GreyWindowRoundSill01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 5)
+mesh = ExtResource("19_irl4x")
+
+[node name="GreyWindowSquare01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 5)
+mesh = ExtResource("20_c8ie7")
+
+[node name="GreyWindowSquareSill01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 5)
+mesh = ExtResource("21_m7wwa")
+
+[node name="IronDoor01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 5)
+mesh = ExtResource("22_hkp6u")
+
+[node name="Lightpost01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = ExtResource("23_083wd")
+
+[node name="PlateCorner01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 10)
+mesh = ExtResource("24_62ush")
+
+[node name="PlateCurve01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = ExtResource("25_0iqye")
+
+[node name="PlatePavement01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 10)
+mesh = ExtResource("26_i3nk2")
+
+[node name="PlateRoad01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 10)
+mesh = ExtResource("27_g6ui2")
+
+[node name="PlateSidewalk01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 10)
+mesh = ExtResource("28_4s3s0")
+
+[node name="PlateWood01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10)
+mesh = ExtResource("29_nu7ba")
+
+[node name="RoofCornerGreen01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 10)
+mesh = ExtResource("30_5wgn8")
+
+[node name="RoofCornerRed01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 10)
+mesh = ExtResource("31_aeqe3")
+
+[node name="RoofInnerCornerGreen01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 10)
+mesh = ExtResource("32_gncgi")
+
+[node name="RoofInnerCornerRed01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 10)
+mesh = ExtResource("33_bphjp")
+
+[node name="RoofPointGreen01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+mesh = ExtResource("34_a7npa")
+
+[node name="RoofPointRed01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 15)
+mesh = ExtResource("35_bun8c")
+
+[node name="RoofSlantGreen01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 15)
+mesh = ExtResource("36_al06m")
+
+[node name="RoofSlantRed01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15)
+mesh = ExtResource("37_64dvk")
+
+[node name="RoofStraightGreen01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 15)
+mesh = ExtResource("38_ychij")
+
+[node name="RoofStraightRed01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 15)
+mesh = ExtResource("39_658nm")
+
+[node name="ShieldGreen01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 15)
+mesh = ExtResource("40_p22uh")
+
+[node name="ShieldRed01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 15)
+mesh = ExtResource("41_xg1ub")
+
+[node name="StairsStone01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 15)
+mesh = ExtResource("42_jrtaq")
+
+[node name="StairsWood01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 15)
+mesh = ExtResource("43_qbxbd")
+
+[node name="Tree01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 15)
+mesh = ExtResource("44_0amcl")
+
+[node name="WoodArch01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+mesh = ExtResource("45_lpbpy")
+
+[node name="WoodBorderWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 20)
+mesh = ExtResource("46_qainn")
+
+[node name="WoodBrokenWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
+mesh = ExtResource("47_hf285")
+
+[node name="WoodCorner01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 20)
+mesh = ExtResource("48_ijnjt")
+
+[node name="WoodDoor01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
+mesh = ExtResource("49_82pb5")
+
+[node name="WoodDoorRound01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 20)
+mesh = ExtResource("50_ho08r")
+
+[node name="WoodDoorSquare01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 20)
+mesh = ExtResource("51_57p3n")
+
+[node name="WoodPole01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 20)
+mesh = ExtResource("52_gj8ng")
+
+[node name="WoodRailing01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 20)
+mesh = ExtResource("53_x102s")
+
+[node name="WoodSlantedPole01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 20)
+mesh = ExtResource("54_crjek")
+
+[node name="WoodSlantedWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 20)
+mesh = ExtResource("55_euthx")
+
+[node name="WoodSmallWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+mesh = ExtResource("56_j4wrl")
+
+[node name="WoodTinyWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 25)
+mesh = ExtResource("57_4jx0f")
+
+[node name="WoodTriangle01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 25)
+mesh = ExtResource("58_56g4c")
+
+[node name="WoodWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 25)
+mesh = ExtResource("59_jwc8e")
+
+[node name="WoodWallCross01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 25)
+mesh = ExtResource("60_vgts6")
+
+[node name="WoodWallDoubleCross01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 25)
+mesh = ExtResource("61_oe21y")
+
+[node name="WoodWindowNarrow01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 25)
+mesh = ExtResource("62_kisxa")
+
+[node name="WoodWindowRound01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 25)
+mesh = ExtResource("63_nj53f")
+
+[node name="WoodWindowRoundLong01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 25)
+mesh = ExtResource("64_82mla")
+
+[node name="WoodWindowRoundSill01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 25)
+mesh = ExtResource("65_aetyw")
+
+[node name="WoodWindowSquare01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 25)
+mesh = ExtResource("66_lg0xu")
+
+[node name="WoodWindowSquareSill01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+mesh = ExtResource("67_qaxat")

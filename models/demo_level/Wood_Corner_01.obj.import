@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3slcli37i8rb"
+path="res://.godot/imported/Wood_Corner_01.obj-e25e3076c4c0db14bda17f3b151e95ae.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wood_Corner_01.obj-e25e3076c4c0db14bda17f3b151e95ae.mesh"]
+
+source_file="res://models/demo_level/Wood_Corner_01.obj"
+dest_files=["res://.godot/imported/Wood_Corner_01.obj-e25e3076c4c0db14bda17f3b151e95ae.mesh", "res://.godot/imported/Wood_Corner_01.obj-e25e3076c4c0db14bda17f3b151e95ae.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8n8lu2nbno5u"
+path="res://.godot/imported/Roof_Slant_Green_01.obj-a3a54e7fb52a461ae513fdf47b11633e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Roof_Slant_Green_01.obj-a3a54e7fb52a461ae513fdf47b11633e.mesh"]
+
+source_file="res://models/demo_level/Roof_Slant_Green_01.obj"
+dest_files=["res://.godot/imported/Roof_Slant_Green_01.obj-a3a54e7fb52a461ae513fdf47b11633e.mesh", "res://.godot/imported/Roof_Slant_Green_01.obj-a3a54e7fb52a461ae513fdf47b11633e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

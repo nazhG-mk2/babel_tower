@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://72ecp6t48gqo"
+path="res://.godot/imported/Grey_Door_Round_01.obj-89464df7ad4bd9c3c756a40d920bc271.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Grey_Door_Round_01.obj-89464df7ad4bd9c3c756a40d920bc271.mesh"]
+
+source_file="res://models/demo_level/Grey_Door_Round_01.obj"
+dest_files=["res://.godot/imported/Grey_Door_Round_01.obj-89464df7ad4bd9c3c756a40d920bc271.mesh", "res://.godot/imported/Grey_Door_Round_01.obj-89464df7ad4bd9c3c756a40d920bc271.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

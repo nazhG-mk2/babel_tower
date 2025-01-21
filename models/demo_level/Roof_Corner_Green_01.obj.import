@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqvqjj45kiewn"
+path="res://.godot/imported/Roof_Corner_Green_01.obj-73b38c9822df675876a9735d0982606f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Roof_Corner_Green_01.obj-73b38c9822df675876a9735d0982606f.mesh"]
+
+source_file="res://models/demo_level/Roof_Corner_Green_01.obj"
+dest_files=["res://.godot/imported/Roof_Corner_Green_01.obj-73b38c9822df675876a9735d0982606f.mesh", "res://.godot/imported/Roof_Corner_Green_01.obj-73b38c9822df675876a9735d0982606f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

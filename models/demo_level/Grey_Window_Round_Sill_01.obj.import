@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kkf7m4usik0q"
+path="res://.godot/imported/Grey_Window_Round_Sill_01.obj-b9e81d8e09a6f78a874a38d35e15af7b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Grey_Window_Round_Sill_01.obj-b9e81d8e09a6f78a874a38d35e15af7b.mesh"]
+
+source_file="res://models/demo_level/Grey_Window_Round_Sill_01.obj"
+dest_files=["res://.godot/imported/Grey_Window_Round_Sill_01.obj-b9e81d8e09a6f78a874a38d35e15af7b.mesh", "res://.godot/imported/Grey_Window_Round_Sill_01.obj-b9e81d8e09a6f78a874a38d35e15af7b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

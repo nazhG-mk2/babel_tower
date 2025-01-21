@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://4lr23ecv72o5"
+path="res://.godot/imported/Wood_Wall_01.obj-da03c0e6460274565d4281b30c5029d5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wood_Wall_01.obj-da03c0e6460274565d4281b30c5029d5.mesh"]
+
+source_file="res://models/demo_level/Wood_Wall_01.obj"
+dest_files=["res://.godot/imported/Wood_Wall_01.obj-da03c0e6460274565d4281b30c5029d5.mesh", "res://.godot/imported/Wood_Wall_01.obj-da03c0e6460274565d4281b30c5029d5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

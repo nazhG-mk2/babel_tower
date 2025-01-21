@@ -14,7 +14,7 @@ func _ready():
 	player = get_parent().get_node("Player")
 	phase_offset = randf() * TAU
 	
-func receive_damage(amount: int):
+func receive_damage(_amount: int):
 	explode()
 
 func explode():
