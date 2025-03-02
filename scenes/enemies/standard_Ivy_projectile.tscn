@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4k3c6j5fglof"]
+
+[ext_resource type="Script" path="res://scripts/standard_Ivy_projectile.gd" id="1_21rxm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p62uh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swnem"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_15uvm"]
+
+[node name="proyectil" type="Area3D"]
+script = ExtResource("1_21rxm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_p62uh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_swnem")
+mesh = SubResource("SphereMesh_15uvm")
+skeleton = NodePath("../CollisionShape3D")
