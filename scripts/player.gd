@@ -14,6 +14,8 @@ var health = 100
 @onready var succubus = $Viewport/Succubus  # Cambia la ruta según tu jerarquía
 @onready var audio_player = $AudioStreamPlayer
 
+@onready var particles = $Particles
+
 # TODO: nos linear dash velocity
 var dash_speed = 4.0
 var dash_duration = 0.2
@@ -21,11 +23,16 @@ var is_dashing = false
 var dash_time_left = 0
 
 func ouch(_health, _max_health):
+	particles.global_position = global_position + Vector3(0, 1, 0.2)
+	particles.restart()
+	particles.emitting = true
+	
 	audio_player.play(0.8)
-	audio_player.volume_db = -30 
+	audio_player.volume_db = -40 
 	audio_player.pitch_scale = randf_range(0.95, 1.05)
 	await get_tree().create_timer(1.5).timeout
 	audio_player.stop()
+	
 
 func _ready():
 	# Conecta la señal cuando un cuerpo entra en el área

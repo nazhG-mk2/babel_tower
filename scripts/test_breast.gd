@@ -41,12 +41,7 @@ func adjust_nodes(vx, vy):
 @onready var Right_wing_material = $Wings/Right.material
 @onready var blood_particles = $GPUParticles2D
 
-func emit_blood():
-	blood_particles.restart()  # Reinicia la emisión
-	blood_particles.emitting = true
-
 func mostrar_flash(_health, _max_health):
-	emit_blood()
 	sprite_material.set_shader_parameter("flash_amount", 1.0)
 	Breast_material.set_shader_parameter("flash_amount", 1.0)
 	Left_wing_material.set_shader_parameter("flash_amount", 1.0)
