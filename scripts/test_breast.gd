@@ -36,15 +36,28 @@ func adjust_nodes(vx, vy):
 		jbl.position = jbl_initial_pos
 
 @onready var sprite_material = $Sprite.material
-@onready var Breast_material = $Polygon/Breast.material
+@onready var Breast_material = $Breast.material
+@onready var Left_wing_material = $Wings/Left.material
+@onready var Right_wing_material = $Wings/Right.material
+@onready var blood_particles = $GPUParticles2D
 
-func mostrar_flash(_amount):
+func emit_blood():
+	blood_particles.restart()  # Reinicia la emisión
+	blood_particles.emitting = true
+
+func mostrar_flash(_health, _max_health):
+	emit_blood()
 	sprite_material.set_shader_parameter("flash_amount", 1.0)
 	Breast_material.set_shader_parameter("flash_amount", 1.0)
+	Left_wing_material.set_shader_parameter("flash_amount", 1.0)
+	Right_wing_material.set_shader_parameter("flash_amount", 1.0)
 	
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property(Breast_material, "shader_parameter/flash_amount", 0.0, 0.5)
 	tween.tween_property(sprite_material, "shader_parameter/flash_amount", 0.0, 0.5)
+	tween.tween_property(Left_wing_material, "shader_parameter/flash_amount", 0.0, 0.5)
+	tween.tween_property(Right_wing_material, "shader_parameter/flash_amount", 0.0, 0.5)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

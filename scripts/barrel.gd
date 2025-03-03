@@ -1,6 +1,6 @@
 extends Node3D
 
-func receive_damage(amount: int):
+func receive_damage(_amount: int):
 	explode()
 
 func explode():

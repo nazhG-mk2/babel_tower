@@ -1,3 +1,3 @@
 extends Node
 
-signal player_damaged(amount)
+signal player_damaged(health:float, max_health:float)

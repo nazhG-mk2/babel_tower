@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://ntq2wpuqfrqp"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1cxgm"]
-[ext_resource type="Texture2D" uid="uid://0f3fxfuf30b6" path="res://assets/player/wings.png" id="3_cixpl"]
 [ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="4_ah87i"]
+[ext_resource type="AudioStream" uid="uid://cm7twp655r242" path="res://sounds/famale_hurts.mp3" id="5_u1f5b"]
 [ext_resource type="PackedScene" uid="uid://b2t0ako31r0q0" path="res://scenes/player/test_breast.tscn" id="5_w8kjt"]
 [ext_resource type="PackedScene" uid="uid://y3yqup2ahmb7" path="res://scenes/ui/health_bar.tscn" id="5_xkhfs"]
 
@@ -117,11 +117,6 @@ transform = Transform3D(0.15, 0, 0, 0, 0.14509, 0.0380637, 0, -0.0380637, 0.1450
 texture_filter = 1
 texture = SubResource("ViewportTexture_cqvq6")
 
-[node name="Wings" type="Sprite3D" parent="."]
-transform = Transform3D(0.15, 0, 0, 0, 0.14509, 0.0380637, 0, -0.0380637, 0.14509, 0, 1.059, 0)
-texture_filter = 1
-texture = ExtResource("3_cixpl")
-
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
 script = ExtResource("4_ah87i")
 
@@ -159,9 +154,13 @@ playback_auto_capture_ease_type = 2
 
 [node name="Viewport" type="SubViewport" parent="."]
 transparent_bg = true
-size = Vector2i(500, 1200)
+size = Vector2i(800, 1200)
 
 [node name="Succubus" parent="Viewport" instance=ExtResource("5_w8kjt")]
-position = Vector2(250, 600)
+position = Vector2(400, 600)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_xkhfs")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_u1f5b")
+pitch_scale = 0.98
