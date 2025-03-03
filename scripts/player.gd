@@ -21,12 +21,10 @@ var is_dashing = false
 var dash_time_left = 0
 
 func ouch(_health, _max_health):
-	var sound_cuts = [0.0, 0.8, 1.8, 2.8]
-	var random_index = randi() % sound_cuts.size()
-	audio_player.play(random_index)
-	audio_player.volume_db = -20 
+	audio_player.play(0.8)
+	audio_player.volume_db = -30 
 	audio_player.pitch_scale = randf_range(0.95, 1.05)
-	await get_tree().create_timer(0.8).timeout
+	await get_tree().create_timer(1.5).timeout
 	audio_player.stop()
 
 func _ready():

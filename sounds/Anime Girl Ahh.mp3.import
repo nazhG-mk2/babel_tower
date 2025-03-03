@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxcd7bxi2ogij"
+path="res://.godot/imported/Anime Girl Ahh.mp3-35e2d1bfc805b3f60ba597f098c69d47.mp3str"
+
+[deps]
+
+source_file="res://sounds/Anime Girl Ahh.mp3"
+dest_files=["res://.godot/imported/Anime Girl Ahh.mp3-35e2d1bfc805b3f60ba597f098c69d47.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
