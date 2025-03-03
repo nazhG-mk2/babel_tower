@@ -41,7 +41,12 @@ func adjust_nodes(vx, vy):
 @onready var Right_wing_material = $Wings/Right.material
 @onready var blood_particles = $GPUParticles2D
 
+const CRY_TEXTURE = preload("res://assets/player/lucy_plana_cry.png")
+
 func mostrar_flash(_health, _max_health):
+	var original_texture = $Sprite.texture  
+	$Sprite.texture = CRY_TEXTURE
+	
 	sprite_material.set_shader_parameter("flash_amount", 1.0)
 	Breast_material.set_shader_parameter("flash_amount", 1.0)
 	Left_wing_material.set_shader_parameter("flash_amount", 1.0)
@@ -52,6 +57,9 @@ func mostrar_flash(_health, _max_health):
 	tween.tween_property(sprite_material, "shader_parameter/flash_amount", 0.0, 0.5)
 	tween.tween_property(Left_wing_material, "shader_parameter/flash_amount", 0.0, 0.5)
 	tween.tween_property(Right_wing_material, "shader_parameter/flash_amount", 0.0, 0.5)
+	
+	await tween.finished  
+	$Sprite.texture = original_texture
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

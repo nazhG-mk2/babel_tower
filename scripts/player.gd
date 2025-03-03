@@ -16,6 +16,8 @@ var health = 100
 
 @onready var particles = $Particles
 
+@onready var tween = $Tween
+
 # TODO: nos linear dash velocity
 var dash_speed = 4.0
 var dash_duration = 0.2
@@ -29,7 +31,7 @@ func ouch(_health, _max_health):
 	
 	audio_player.play(0.8)
 	audio_player.volume_db = -40 
-	audio_player.pitch_scale = randf_range(0.95, 1.05)
+	audio_player.pitch_scale = randf_range(0.85, 0.95)
 	await get_tree().create_timer(1.5).timeout
 	audio_player.stop()
 	
@@ -39,6 +41,7 @@ func _ready():
 	$Area3D.body_entered.connect(_on_body_entered)
 	EventBus.player_damaged.connect(ouch)
 	add_to_group("player")
+	start_floating()
 
 func attack():
 	if not can_attack:
@@ -123,6 +126,11 @@ func take_damage(amount):
 
 func die():
 	print("El jugador ha muerto.")
+	
+func start_floating():
+	var tween = create_tween().set_loops()  # Se repite indefinidamente
+	tween.tween_property($Sprite, "position:y", $Sprite.position.y - .1, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property($Sprite, "position:y", $Sprite.position.y + .1, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
 func _update_sprite_flip(direction_x: float):
 	if direction_x > 0:  # Moviéndose a la derecha
