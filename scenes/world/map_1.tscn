@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://buvwp2u8lq1vd" path="res://scenes/world/barrel.tscn" id="5_fy5o2"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://assets/player/lucy_01.png" id="6_jbrnr"]
 [ext_resource type="Texture2D" uid="uid://cxnlxryqewq0s" path="res://assets/enemies/gabriela_01.png" id="7_wd83b"]
-[ext_resource type="Script" path="res://scripts/area_diag.gd" id="8_u41t7"]
+[ext_resource type="Script" uid="uid://bte41nutgqlef" path="res://scripts/area_diag.gd" id="8_u41t7"]
 [ext_resource type="PackedScene" uid="uid://dmoi7eyujn0tq" path="res://scenes/enemies/Boss_01.tscn" id="9_p1hsa"]
 [ext_resource type="PackedScene" uid="uid://xwoaqqcep7p8" path="res://scenes/world/level_demo.tscn" id="10_r8dce"]
 

@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://ntq2wpuqfrqp"]
+[gd_scene load_steps=19 format=3 uid="uid://ntq2wpuqfrqp"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_1cxgm"]
-[ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="4_ah87i"]
+[ext_resource type="Script" uid="uid://dlqhq1j2xygec" path="res://scripts/player.gd" id="1_1cxgm"]
+[ext_resource type="Script" uid="uid://bp8clbuaal4yf" path="res://scripts/wings3D.gd" id="3_0owmy"]
 [ext_resource type="AudioStream" uid="uid://cxcd7bxi2ogij" path="res://sounds/Anime Girl Ahh.mp3" id="5_v1u31"]
 [ext_resource type="PackedScene" uid="uid://b2t0ako31r0q0" path="res://scenes/player/test_breast.tscn" id="5_w8kjt"]
 [ext_resource type="PackedScene" uid="uid://y3yqup2ahmb7" path="res://scenes/ui/health_bar.tscn" id="5_xkhfs"]
+[ext_resource type="Texture2D" uid="uid://0f3fxfuf30b6" path="res://assets/player/wings.png" id="6_0owmy"]
+[ext_resource type="ArrayMesh" uid="uid://bq850itymttei" path="res://lucy.obj" id="6_75vfm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbj2s"]
 
@@ -101,8 +103,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jbq5h"]
 _data = {
-"RESET": SubResource("Animation_1iksn"),
-"area_flash": SubResource("Animation_daejg")
+&"RESET": SubResource("Animation_1iksn"),
+&"area_flash": SubResource("Animation_daejg")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vl5gj"]
@@ -131,18 +133,40 @@ script = ExtResource("1_1cxgm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13, 0)
 shape = SubResource("CapsuleShape3D_rbj2s")
 
+[node name="Lucy" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.890478, 0)
+mesh = ExtResource("6_75vfm")
+
+[node name="Wings" type="Node3D" parent="Lucy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.562931)
+script = ExtResource("3_0owmy")
+
+[node name="Left" type="Node3D" parent="Lucy/Wings"]
+transform = Transform3D(0.95378, -0.300506, 0, 0.300506, 0.95378, 0, 0, 0, 1, 0.3, -0.1, 0.3)
+
+[node name="Wing" type="Sprite3D" parent="Lucy/Wings/Left"]
+transform = Transform3D(0.421371, 0.0645304, 0.255521, 0.0167305, 0.474349, -0.147384, -0.263012, 0.133558, 0.399994, 0.46446, 0.187198, -0.600743)
+texture = ExtResource("6_0owmy")
+region_enabled = true
+region_rect = Rect2(643, 363.5, 320, 134)
+
+[node name="Right" type="Node3D" parent="Lucy/Wings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.1, 0.3)
+
+[node name="Wing" type="Sprite3D" parent="Lucy/Wings/Right"]
+transform = Transform3D(0.341473, 0.12584, -0.338481, -0.110516, 0.479912, 0.0669275, 0.343789, 0.0292831, 0.357715, -0.376886, 0.283136, -0.6)
+texture = ExtResource("6_0owmy")
+region_enabled = true
+region_rect = Rect2(63, 370.5, 322, 121)
+
 [node name="Sprite" type="Sprite3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.14509, 0.0380637, 0, -0.0380637, 0.14509, 0, 1.059, 0.001)
+visible = false
 texture_filter = 1
 texture = SubResource("ViewportTexture_cqvq6")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
-script = ExtResource("4_ah87i")
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.812938, 0.58235, 0, -0.58235, 0.812938, 0.043819, 4.62606, 4.23881)
-current = true
-fov = 50.0
+transform = Transform3D(1, 0, 0, 0, 0.800846, 0.59887, 0, -0.59887, 0.800846, 2.38419e-07, 2.42163, 2.36228)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19012, 0)
@@ -167,7 +191,7 @@ mesh = SubResource("BoxMesh_doe87")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_jbq5h")
+&"": SubResource("AnimationLibrary_jbq5h")
 }
 playback_auto_capture_ease_type = 2
 

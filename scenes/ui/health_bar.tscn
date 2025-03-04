@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://y3yqup2ahmb7"]
 
-[ext_resource type="Script" path="res://scripts/canvas_layer.gd" id="1_u4ge5"]
+[ext_resource type="Script" uid="uid://cpel73frd8466" path="res://scripts/canvas_layer.gd" id="1_u4ge5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glibt"]
 bg_color = Color(1, 0.316384, 0.443546, 1)

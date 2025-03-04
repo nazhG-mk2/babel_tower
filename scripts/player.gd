@@ -90,6 +90,13 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	var speed := SPEED
+	
+	if direction.length() > 0.01:  # Solo rota si se está moviendo
+		var target_rotation = atan2(direction.x, direction.z)  # Calcula la rotación en Y
+		var current_rotation = $Lucy.rotation.y  # Rotación actual en Y
+		$Lucy.rotation.y = lerp_angle(current_rotation, target_rotation, delta * 10)  # Interpola suavemente
+
+	
 	if is_dashing:
 		speed += dash_speed
 	if direction:
@@ -128,9 +135,9 @@ func die():
 	print("El jugador ha muerto.")
 	
 func start_floating():
-	var tween = create_tween().set_loops()  # Se repite indefinidamente
-	tween.tween_property($Sprite, "position:y", $Sprite.position.y - .1, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property($Sprite, "position:y", $Sprite.position.y + .1, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	var tween2 = create_tween().set_loops()  # Se repite indefinidamente
+	tween2.tween_property($Lucy, "position:y", $Lucy.position.y - .1, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween2.tween_property($Lucy, "position:y", $Lucy.position.y + .1, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
 func _update_sprite_flip(direction_x: float):
 	if direction_x > 0:  # Moviéndose a la derecha

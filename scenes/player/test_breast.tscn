@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=3 uid="uid://b2t0ako31r0q0"]
 
-[ext_resource type="Script" path="res://scripts/test_breast.gd" id="1_r8p4i"]
+[ext_resource type="Script" uid="uid://cc5xkcs0spxuc" path="res://scripts/test_breast.gd" id="1_r8p4i"]
 [ext_resource type="Texture2D" uid="uid://dnq03dhkd3kuv" path="res://assets/player/lucy_plana.png" id="2_3fkxw"]
 [ext_resource type="Texture2D" uid="uid://0f3fxfuf30b6" path="res://assets/player/wings.png" id="2_63yjg"]
 [ext_resource type="Texture2D" uid="uid://nfpwn1mciq78" path="res://assets/player/lucy.png" id="2_ap82i"]
-[ext_resource type="Shader" path="res://shaders/get_hit.gdshader" id="2_oswjh"]
-[ext_resource type="Script" path="res://scripts/wings.gd" id="2_u64r3"]
+[ext_resource type="Shader" uid="uid://ffemtuart7en" path="res://shaders/get_hit.gdshader" id="2_oswjh"]
+[ext_resource type="Script" uid="uid://d3hueg215plnf" path="res://scripts/wings.gd" id="2_u64r3"]
 [ext_resource type="Texture2D" uid="uid://ttx7mfukbjuh" path="res://assets/icon.svg" id="3_fqpxp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aw1y1"]
