@@ -62,9 +62,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00268555, 0, 0)
 shape = SubResource("BoxShape3D_jdt5q")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.832316, -0.372408, 0.410563, 0.0231481, 0.763393, 0.64552, -0.553818, -0.527773, 0.644005, 3.64997, 6.7115, 6.4532)
+transform = Transform3D(-0.0108087, -0.999852, 0.0133975, -0.346005, 0.0163103, 0.938091, -0.93817, 0.0055039, -0.34613, -0.186413, 13.7013, -7.40027)
 light_color = Color(1, 0.960784, 1, 1)
-light_energy = 0.7
+light_energy = 1.444
 shadow_opacity = 0.69
 shadow_blur = 2.212
 directional_shadow_split_1 = 0.049

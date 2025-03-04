@@ -3,15 +3,19 @@
 [ext_resource type="Script" uid="uid://dlqhq1j2xygec" path="res://scripts/player.gd" id="1_1cxgm"]
 [ext_resource type="Script" uid="uid://bp8clbuaal4yf" path="res://scripts/wings3D.gd" id="3_0owmy"]
 [ext_resource type="AudioStream" uid="uid://cxcd7bxi2ogij" path="res://sounds/Anime Girl Ahh.mp3" id="5_v1u31"]
-[ext_resource type="PackedScene" uid="uid://b2t0ako31r0q0" path="res://scenes/player/test_breast.tscn" id="5_w8kjt"]
 [ext_resource type="PackedScene" uid="uid://y3yqup2ahmb7" path="res://scenes/ui/health_bar.tscn" id="5_xkhfs"]
 [ext_resource type="Texture2D" uid="uid://0f3fxfuf30b6" path="res://assets/player/wings.png" id="6_0owmy"]
-[ext_resource type="ArrayMesh" uid="uid://bq850itymttei" path="res://lucy.obj" id="6_75vfm"]
+[ext_resource type="ArrayMesh" uid="uid://bq850itymttei" path="res://models/lucy.obj" id="6_75vfm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbj2s"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_cqvq6"]
-viewport_path = NodePath("Viewport")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75vfm"]
+albedo_color = Color(0.839216, 0.878431, 0.0509804, 1)
+roughness = 0.0
+rim = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0owmy"]
+albedo_color = Color(0.941176, 0.196078, 0.266667, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hkmbl"]
 size = Vector3(1, 1.48633, 1)
@@ -136,34 +140,30 @@ shape = SubResource("CapsuleShape3D_rbj2s")
 [node name="Lucy" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.890478, 0)
 mesh = ExtResource("6_75vfm")
+surface_material_override/0 = SubResource("StandardMaterial3D_75vfm")
+surface_material_override/1 = SubResource("StandardMaterial3D_0owmy")
 
 [node name="Wings" type="Node3D" parent="Lucy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.562931)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.112204, -0.562931)
 script = ExtResource("3_0owmy")
 
 [node name="Left" type="Node3D" parent="Lucy/Wings"]
-transform = Transform3D(0.95378, -0.300506, 0, 0.300506, 0.95378, 0, 0, 0, 1, 0.3, -0.1, 0.3)
+transform = Transform3D(0.87001, -0.0991438, 0.482963, 0.25, 0.933013, -0.258819, -0.42495, 0.345916, 0.836516, 0, 0, 0)
 
 [node name="Wing" type="Sprite3D" parent="Lucy/Wings/Left"]
-transform = Transform3D(0.421371, 0.0645304, 0.255521, 0.0167305, 0.474349, -0.147384, -0.263012, 0.133558, 0.399994, 0.46446, 0.187198, -0.600743)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.808754, 0.168962, 0)
 texture = ExtResource("6_0owmy")
 region_enabled = true
 region_rect = Rect2(643, 363.5, 320, 134)
 
 [node name="Right" type="Node3D" parent="Lucy/Wings"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.1, 0.3)
+transform = Transform3D(0.87001, 0.0991438, -0.482963, -0.25, 0.933012, -0.258819, 0.42495, 0.345916, 0.836516, 0, 0, 0)
 
 [node name="Wing" type="Sprite3D" parent="Lucy/Wings/Right"]
-transform = Transform3D(0.341473, 0.12584, -0.338481, -0.110516, 0.479912, 0.0669275, 0.343789, 0.0292831, 0.357715, -0.376886, 0.283136, -0.6)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.724836, 0.126824, 0)
 texture = ExtResource("6_0owmy")
 region_enabled = true
-region_rect = Rect2(63, 370.5, 322, 121)
-
-[node name="Sprite" type="Sprite3D" parent="."]
-transform = Transform3D(0.15, 0, 0, 0, 0.14509, 0.0380637, 0, -0.0380637, 0.14509, 0, 1.059, 0.001)
-visible = false
-texture_filter = 1
-texture = SubResource("ViewportTexture_cqvq6")
+region_rect = Rect2(63, 370.5, 340, 134)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.800846, 0.59887, 0, -0.59887, 0.800846, 2.38419e-07, 2.42163, 2.36228)
@@ -195,13 +195,6 @@ libraries = {
 }
 playback_auto_capture_ease_type = 2
 
-[node name="Viewport" type="SubViewport" parent="."]
-transparent_bg = true
-size = Vector2i(800, 1200)
-
-[node name="Succubus" parent="Viewport" instance=ExtResource("5_w8kjt")]
-position = Vector2(400, 600)
-
 [node name="CanvasLayer" parent="." instance=ExtResource("5_xkhfs")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -218,3 +211,6 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_px4n6")
 draw_pass_1 = SubResource("QuadMesh_ril73")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.755716, -0.654899, 0, 0.654899, 0.755716, 0, 0, 1.0525)

@@ -119,7 +119,7 @@ func stop_dash():
 func _process(_delta):
 	if Input.is_action_just_pressed("attack"):
 		attack()
-	succubus.adjust_nodes(velocity.x, velocity.y)
+	#succubus.adjust_nodes(velocity.x, velocity.y)
 
 func take_damage(amount):
 	health -= amount
@@ -141,8 +141,6 @@ func start_floating():
 
 func _update_sprite_flip(direction_x: float):
 	if direction_x > 0:  # Moviéndose a la derecha
-		$Sprite.flip_h = false
 		$Area3D.rotation_degrees.y = 0
 	elif direction_x < 0:  # Moviéndose a la izquierda
-		$Sprite.flip_h = true
 		$Area3D.rotation_degrees.y = 180
