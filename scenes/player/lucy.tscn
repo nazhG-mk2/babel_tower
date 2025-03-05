@@ -1,7 +1,12 @@
-[gd_scene load_steps=6 format=4 uid="uid://bhapi8dm4a8mf"]
+[gd_scene load_steps=8 format=4 uid="uid://bhapi8dm4a8mf"]
 
+[ext_resource type="Shader" uid="uid://b5ep1a63j4q33" path="res://lucy.gdshader" id="2_4gyn7"]
 [ext_resource type="Script" uid="uid://d4f8y4tjndmrm" path="res://scripts/3d_animation.gd" id="2_hhoui"]
 [ext_resource type="Script" uid="uid://cnqb3ybiitnk2" path="res://addons/jigglebones/jigglebone.gd" id="2_krpkh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hhoui"]
+render_priority = 0
+shader = ExtResource("2_4gyn7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0wc6"]
 
@@ -204,11 +209,12 @@ bones/16/rotation = Quaternion(-0.20972, 0.163318, -0.650805, 0.711195)
 bones/16/scale = Vector3(1, 1, 1)
 
 [node name="Lucy_003" type="MeshInstance3D" parent="Skeleton"]
+material_override = SubResource("ShaderMaterial_hhoui")
 mesh = SubResource("ArrayMesh_s54sk")
 skin = SubResource("Skin_id4hn")
 
 [node name="Breast_l" type="Node3D" parent="Skeleton"]
-transform = Transform3D(-0.731596, -0.281225, 0.621031, 0.571112, -0.750279, 0.333036, 0.372289, 0.598326, 0.709512, -0.325855, -0.437446, -0.81415)
+transform = Transform3D(-0.731596, -0.281225, 0.621031, 0.571112, -0.750279, 0.333036, 0.372289, 0.598326, 0.709512, -0.325855, -0.437445, -0.81415)
 top_level = true
 script = ExtResource("2_krpkh")
 bone_name = "breast_l"
@@ -218,7 +224,7 @@ gravity = Vector3(0, -0.1, 0)
 metadata/_custom_type_script = "uid://cnqb3ybiitnk2"
 
 [node name="Breast_r" type="Node3D" parent="Skeleton"]
-transform = Transform3D(-0.731596, 0.281225, -0.621031, -0.571112, -0.750279, 0.333036, -0.372289, 0.598326, 0.709512, 0.325855, -0.437446, -0.81415)
+transform = Transform3D(-0.731596, 0.281225, -0.621031, -0.571112, -0.750279, 0.333036, -0.372289, 0.598326, 0.709512, 0.325855, -0.437445, -0.81415)
 top_level = true
 script = ExtResource("2_krpkh")
 bone_name = "breast_r"
@@ -228,7 +234,7 @@ gravity = Vector3(0, 0, 0.5)
 metadata/_custom_type_script = "uid://cnqb3ybiitnk2"
 
 [node name="But_l" type="Node3D" parent="Skeleton"]
-transform = Transform3D(0.0786427, 0.984395, -0.157421, -0.299886, 0.173956, 0.937981, 0.950728, -0.0265571, 0.308886, 0.0540709, -0.732153, -1.45606)
+transform = Transform3D(-0.0687216, 0.996168, -0.0540972, 0.78282, 0.0874594, 0.616071, 0.618442, -1.09673e-05, -0.785831, 0.0540711, -1.31966, 0.328008)
 top_level = true
 script = ExtResource("2_krpkh")
 bone_name = "hip_l"
@@ -237,7 +243,7 @@ damping = 0.3
 metadata/_custom_type_script = "uid://cnqb3ybiitnk2"
 
 [node name="But_r" type="Node3D" parent="Skeleton"]
-transform = Transform3D(0.0825096, -0.982756, 0.165481, 0.29835, 0.182789, 0.93679, -0.950884, -0.0279231, 0.308286, -0.0569064, -0.732347, -1.4559)
+transform = Transform3D(-0.0723238, -0.995755, 0.0569339, -0.782495, 0.0920444, 0.615816, -0.618442, -1.2368e-05, -0.78583, -0.0569062, -1.31941, 0.328007)
 top_level = true
 script = ExtResource("2_krpkh")
 bone_name = "hip_r"
@@ -246,7 +252,7 @@ damping = 0.3
 metadata/_custom_type_script = "uid://cnqb3ybiitnk2"
 
 [node name="arm_l" type="Node3D" parent="Skeleton"]
-transform = Transform3D(-0.473896, 0.818584, 0.324565, -0.734147, -0.570807, 0.367706, 0.486262, -0.0640243, 0.871464, 0.241271, 0.0850853, -1.08516)
+transform = Transform3D(-0.214861, 0.857862, 0.466805, -0.358717, -0.513879, 0.779263, 0.908381, -1.71065e-05, 0.418143, -0.171601, -0.883673, -0.522633)
 top_level = true
 script = ExtResource("2_krpkh")
 bone_name = "Arm1_l"
@@ -255,7 +261,7 @@ damping = 0.5
 metadata/_custom_type_script = "uid://cnqb3ybiitnk2"
 
 [node name="arm_r" type="Node3D" parent="Skeleton"]
-transform = Transform3D(-0.396735, -0.879823, -0.261749, 0.810403, -0.469637, 0.350269, -0.431102, -0.0731581, 0.899333, -0.26286, 0.192247, -1.05921)
+transform = Transform3D(-0.168933, -0.914733, -0.367051, 0.382478, -0.40406, 0.830931, -0.90839, -1.70171e-05, 0.418124, 0.0718313, -0.935335, -0.522632)
 top_level = true
 script = ExtResource("2_krpkh")
 bone_name = "Arm1_r"
