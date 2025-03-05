@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b44phw8h6fvww"
-path="res://.godot/imported/lucy.glb-55a28c936fc14f0a44d843eaf3d6cdee.scn"
+uid="uid://bth6lrsrkdmxh"
+path="res://.godot/imported/lucy.glb-ba4941fdb706a2712c04428b3be37ced.scn"
 
 [deps]
 
-source_file="res://lucy.glb"
-dest_files=["res://.godot/imported/lucy.glb-55a28c936fc14f0a44d843eaf3d6cdee.scn"]
+source_file="res://models/lucy.glb"
+dest_files=["res://.godot/imported/lucy.glb-ba4941fdb706a2712c04428b3be37ced.scn"]
 
 [params]
 

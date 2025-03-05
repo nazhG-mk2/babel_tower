@@ -34,14 +34,12 @@ func ouch(_health, _max_health):
 	audio_player.pitch_scale = randf_range(0.85, 0.95)
 	await get_tree().create_timer(1.5).timeout
 	audio_player.stop()
-	
 
 func _ready():
 	# Conecta la señal cuando un cuerpo entra en el área
 	$Area3D.body_entered.connect(_on_body_entered)
 	EventBus.player_damaged.connect(ouch)
 	add_to_group("player")
-	start_floating()
 
 func attack():
 	if not can_attack:
@@ -134,11 +132,6 @@ func take_damage(amount):
 func die():
 	print("El jugador ha muerto.")
 	
-func start_floating():
-	var tween2 = create_tween().set_loops()  # Se repite indefinidamente
-	tween2.tween_property($Lucy, "position:y", $Lucy.position.y - .1, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween2.tween_property($Lucy, "position:y", $Lucy.position.y + .1, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
 func _update_sprite_flip(direction_x: float):
 	if direction_x > 0:  # Moviéndose a la derecha
 		$Area3D.rotation_degrees.y = 0
