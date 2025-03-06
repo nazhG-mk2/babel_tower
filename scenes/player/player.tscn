@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://ntq2wpuqfrqp"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_1cxgm"]
-[ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="4_ah87i"]
+[ext_resource type="Script" uid="uid://es4o3qptbkup" path="res://scripts/player.gd" id="1_1cxgm"]
+[ext_resource type="Script" uid="uid://cs7havxc6gg7w" path="res://scripts/spring_arm_3d.gd" id="4_ah87i"]
 [ext_resource type="AudioStream" uid="uid://cxcd7bxi2ogij" path="res://sounds/Anime Girl Ahh.mp3" id="5_v1u31"]
 [ext_resource type="PackedScene" uid="uid://b2t0ako31r0q0" path="res://scenes/player/test_breast.tscn" id="5_w8kjt"]
 [ext_resource type="PackedScene" uid="uid://y3yqup2ahmb7" path="res://scenes/ui/health_bar.tscn" id="5_xkhfs"]
@@ -101,8 +101,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jbq5h"]
 _data = {
-"RESET": SubResource("Animation_1iksn"),
-"area_flash": SubResource("Animation_daejg")
+&"RESET": SubResource("Animation_1iksn"),
+&"area_flash": SubResource("Animation_daejg")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vl5gj"]
@@ -167,7 +167,7 @@ mesh = SubResource("BoxMesh_doe87")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_jbq5h")
+&"": SubResource("AnimationLibrary_jbq5h")
 }
 playback_auto_capture_ease_type = 2
 

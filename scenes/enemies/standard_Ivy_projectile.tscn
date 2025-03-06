@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4k3c6j5fglof"]
 
-[ext_resource type="Script" path="res://scripts/standard_Ivy_projectile.gd" id="1_21rxm"]
+[ext_resource type="Script" uid="uid://6nbs52xetad" path="res://scripts/standard_Ivy_projectile.gd" id="1_21rxm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p62uh"]
 
