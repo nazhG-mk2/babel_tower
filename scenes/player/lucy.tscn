@@ -214,7 +214,7 @@ mesh = SubResource("ArrayMesh_s54sk")
 skin = SubResource("Skin_id4hn")
 
 [node name="Breast_l" type="Node3D" parent="Skeleton"]
-transform = Transform3D(-0.731596, -0.281225, 0.621031, 0.571112, -0.750279, 0.333036, 0.372289, 0.598326, 0.709512, -0.325855, -0.437445, -0.81415)
+transform = Transform3D(-0.731596, -0.281225, 0.621031, 0.571112, -0.750279, 0.333036, 0.372289, 0.598326, 0.709512, -0.325855, -0.437446, -0.81415)
 top_level = true
 script = ExtResource("2_krpkh")
 bone_name = "breast_l"
@@ -224,7 +224,7 @@ gravity = Vector3(0, -0.1, 0)
 metadata/_custom_type_script = "uid://cnqb3ybiitnk2"
 
 [node name="Breast_r" type="Node3D" parent="Skeleton"]
-transform = Transform3D(-0.731596, 0.281225, -0.621031, -0.571112, -0.750279, 0.333036, -0.372289, 0.598326, 0.709512, 0.325855, -0.437445, -0.81415)
+transform = Transform3D(-0.731596, 0.281225, -0.621031, -0.571112, -0.750279, 0.333036, -0.372289, 0.598326, 0.709512, 0.325855, -0.437446, -0.81415)
 top_level = true
 script = ExtResource("2_krpkh")
 bone_name = "breast_r"
@@ -234,7 +234,7 @@ gravity = Vector3(0, 0, 0.5)
 metadata/_custom_type_script = "uid://cnqb3ybiitnk2"
 
 [node name="But_l" type="Node3D" parent="Skeleton"]
-transform = Transform3D(-0.0687216, 0.996168, -0.0540972, 0.78282, 0.0874594, 0.616071, 0.618442, -1.09673e-05, -0.785831, 0.0540711, -1.31966, 0.328008)
+transform = Transform3D(-0.0687216, 0.996168, -0.0540972, 0.78282, 0.0874594, 0.616071, 0.618442, -1.09673e-05, -0.785831, 0.0540711, -1.31967, 0.328007)
 top_level = true
 script = ExtResource("2_krpkh")
 bone_name = "hip_l"
@@ -261,7 +261,7 @@ damping = 0.5
 metadata/_custom_type_script = "uid://cnqb3ybiitnk2"
 
 [node name="arm_r" type="Node3D" parent="Skeleton"]
-transform = Transform3D(-0.168933, -0.914733, -0.367051, 0.382478, -0.40406, 0.830931, -0.90839, -1.70171e-05, 0.418124, 0.0718313, -0.935335, -0.522632)
+transform = Transform3D(-0.168933, -0.914733, -0.367051, 0.382478, -0.40406, 0.830931, -0.90839, -1.70171e-05, 0.418124, 0.071831, -0.935335, -0.522632)
 top_level = true
 script = ExtResource("2_krpkh")
 bone_name = "Arm1_r"

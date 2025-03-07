@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ogoc0h7mxcae"]
+
+[ext_resource type="Script" uid="uid://dp8x81wfqr7bk" path="res://scripts/basic_chase_move.gd" id="1_yfvkx"]
+[ext_resource type="Texture2D" uid="uid://deku42qqd6x3" path="res://assets/enemies/ivy.png" id="2_yfvkx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_57njg"]
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_yfvkx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_57njg")
+
+[node name="Sprite3D" type="Sprite3D" parent="CollisionShape3D2"]
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0, 0)
+billboard = 1
+shaded = true
+alpha_cut = 2
+texture_filter = 4
+texture = ExtResource("2_yfvkx")

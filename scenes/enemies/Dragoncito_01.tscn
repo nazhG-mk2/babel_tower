@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx1u0gwnckh1k"]
+
+[ext_resource type="Script" uid="uid://dgy5uw5x3qw0q" path="res://scripts/ivy.gd" id="1_bfcgu"]
+[ext_resource type="PackedScene" uid="uid://c4k3c6j5fglof" path="res://scenes/enemies/standard_Ivy_projectile.tscn" id="2_57y7y"]
+[ext_resource type="Texture2D" uid="uid://cmsub0lkb0tts" path="res://assets/enemies/dagonsito.png" id="3_ud80d"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_bfcgu")
+projectile_scene = ExtResource("2_57y7y")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, 0.702544, 0)
+billboard = 2
+texture = ExtResource("3_ud80d")
+
+[node name="Spawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59494, 0)

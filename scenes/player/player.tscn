@@ -130,7 +130,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13, 0)
 shape = SubResource("CapsuleShape3D_rbj2s")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.800846, 0.59887, 0, -0.59887, 0.800846, 2.38419e-07, 2.42163, 2.36228)
+transform = Transform3D(1, 0, 0, 0, 0.450644, 0.892704, 0, -0.892704, 0.450644, 0.602494, 5.50203, 2.28978)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19012, 0)

@@ -8,8 +8,16 @@ var spawn_interval = 6.0 # Intervalo en segundos
 var player: Node3D
 var toggle = false
 
+var base_height = 0.0
+var amplitude = 0.3  # Cuánto sube
+var speed = 2.0  # Velocidad del movimiento
+
+func _process(delta):
+	var offset = -sin(Time.get_ticks_msec() * 0.001 * speed) * amplitude
+	global_transform.origin.y = base_height + offset
 
 func _ready():
+	base_height = global_transform.origin.y  # Guarda la altura inicial
 	player = get_node("/root/Node3D/Player")
 	# Llama a la función de creación de proyectiles cada 6 segundos
 	spawn_projectile_periodically()

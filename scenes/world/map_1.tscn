@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://jnm3d7m8hbn1"]
+[gd_scene load_steps=20 format=3 uid="uid://jnm3d7m8hbn1"]
 
 [ext_resource type="PackedScene" uid="uid://ntq2wpuqfrqp" path="res://scenes/player/player.tscn" id="1_j6syy"]
 [ext_resource type="Texture2D" uid="uid://c2468b32j8sqa" path="res://assets/textures/suelo_ladrillo.jpeg" id="2_hic1v"]
-[ext_resource type="PackedScene" uid="uid://bscbluvm33tom" path="res://scenes/enemies/dragoncito.tscn" id="3_adnyj"]
 [ext_resource type="PackedScene" uid="uid://1qfcnxvbtpub" path="res://scenes/enemies/Ivy.tscn" id="4_vfd3g"]
 [ext_resource type="PackedScene" uid="uid://buvwp2u8lq1vd" path="res://scenes/world/barrel.tscn" id="5_fy5o2"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://assets/player/lucy_01.png" id="6_jbrnr"]
@@ -10,6 +9,8 @@
 [ext_resource type="Script" uid="uid://bte41nutgqlef" path="res://scripts/area_diag.gd" id="8_u41t7"]
 [ext_resource type="PackedScene" uid="uid://dmoi7eyujn0tq" path="res://scenes/enemies/Boss_01.tscn" id="9_p1hsa"]
 [ext_resource type="PackedScene" uid="uid://xwoaqqcep7p8" path="res://scenes/world/level_demo.tscn" id="10_r8dce"]
+[ext_resource type="Script" uid="uid://4l014fuwsjm0" path="res://scripts/fps.gd" id="10_x3002"]
+[ext_resource type="Script" uid="uid://t383kfa5udvr" path="res://scenes/world/spawn_zone.gd" id="11_2blye"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nsj4"]
 albedo_texture = ExtResource("2_hic1v")
@@ -34,24 +35,14 @@ fill_to = Vector2(0, 0)
 [sub_resource type="BoxShape3D" id="BoxShape3D_dsnp0"]
 size = Vector3(9.98898, 1, 9.77734)
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_he24o"]
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_j6syy")]
 
-[node name="Ground2" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 13.2856, -0.956452, 0)
-material_override = SubResource("StandardMaterial3D_1nsj4")
-mesh = SubResource("BoxMesh_ju6kx")
-skeleton = NodePath("../Ground")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ground2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00268555, 0, 0)
-shape = SubResource("BoxShape3D_jdt5q")
-
 [node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -0.478226, 0)
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.478226, 0)
 material_override = SubResource("StandardMaterial3D_1nsj4")
 mesh = SubResource("BoxMesh_ju6kx")
 
@@ -73,17 +64,6 @@ directional_shadow_blend_splits = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 process_mode = 3
 environment = SubResource("Environment_vmlwl")
-
-[node name="Dragonsito1" parent="." instance=ExtResource("3_adnyj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90492, 2.03453, -1.16351)
-
-[node name="Dragonsito2" parent="." instance=ExtResource("3_adnyj")]
-
-[node name="Dragonsito3" parent="." instance=ExtResource("3_adnyj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39815, 2.20697, -0.55574)
-
-[node name="Ivy1" parent="." instance=ExtResource("4_vfd3g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84776, 0, -4.35729)
 
 [node name="barrel" parent="." instance=ExtResource("5_fy5o2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.20521, 0, 0.44791)
@@ -136,3 +116,37 @@ transform = Transform3D(0.852447, 0, 0.948134, 0, 1.275, 0, -0.948134, 0, 0.8524
 
 [node name="GridMap" parent="." instance=ExtResource("10_r8dce")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10.9, 0, -2.62268e-07)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("10_x3002")
+
+[node name="EnemyContoller" type="Node3D" parent="."]
+
+[node name="DragonesManage" type="Node3D" parent="EnemyContoller"]
+
+[node name="Drag" parent="EnemyContoller/DragonesManage" instance=ExtResource("4_vfd3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.848, 0.5, -19.268)
+
+[node name="Drag2" parent="EnemyContoller/DragonesManage" instance=ExtResource("4_vfd3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.665, 0.5, -16.917)
+
+[node name="Drag3" parent="EnemyContoller/DragonesManage" instance=ExtResource("4_vfd3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.543, 0.5, -13.072)
+
+[node name="Drag4" parent="EnemyContoller/DragonesManage" instance=ExtResource("4_vfd3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.391, 0.5, -17.429)
+
+[node name="SpawnZone" type="Area3D" parent="EnemyContoller"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("11_2blye")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyContoller/SpawnZone"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.692273, 0)
+shape = SubResource("WorldBoundaryShape3D_he24o")
+debug_color = Color(0.922221, 5.31363e-05, 0.688321, 0.42)
+
+[node name="SpawnTimer" type="Timer" parent="EnemyContoller/SpawnZone"]
+
+[connection signal="timeout" from="EnemyContoller/SpawnZone/SpawnTimer" to="EnemyContoller/SpawnZone" method="_on_SpawnTimer_timeout"]
