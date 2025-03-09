@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ntq2wpuqfrqp"]
+[gd_scene load_steps=18 format=3 uid="uid://ntq2wpuqfrqp"]
 
 [ext_resource type="Script" uid="uid://dlqhq1j2xygec" path="res://scripts/player.gd" id="1_1cxgm"]
 [ext_resource type="Script" uid="uid://bp8clbuaal4yf" path="res://scripts/wings3D.gd" id="3_0owmy"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cxcd7bxi2ogij" path="res://sounds/Anime Girl Ahh.mp3" id="5_v1u31"]
 [ext_resource type="PackedScene" uid="uid://y3yqup2ahmb7" path="res://scenes/ui/health_bar.tscn" id="5_xkhfs"]
 [ext_resource type="Texture2D" uid="uid://0f3fxfuf30b6" path="res://assets/player/wings.png" id="6_0owmy"]
+[ext_resource type="PackedScene" uid="uid://dnex5vce6gp7n" path="res://scenes/weapons/Skull_weapon.tscn" id="7_0owmy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbj2s"]
 
@@ -203,3 +204,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.724836, 0.126824, 0)
 texture = ExtResource("6_0owmy")
 region_enabled = true
 region_rect = Rect2(63, 370.5, 340, 134)
+
+[node name="Skull_Weapon" parent="." instance=ExtResource("7_0owmy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.868735, 0)

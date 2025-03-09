@@ -16,6 +16,10 @@ func _ready():
 	# Destruye el proyectil después del tiempo de vida
 
 func _on_body_entered(body):
+	print(body)
+	if body.is_in_group("weapon"):
+		queue_free()  # Destruir el proyectil
+		
 	if body.is_in_group("player"):  # Verifica si es el jugador
 		body.take_damage(10)  # Aplica daño
 		queue_free()  # Destruir el proyectil
