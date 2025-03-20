@@ -16,6 +16,5 @@ func _toggle_visibility():
 	sprite_b.visible = !sprite_b.visible
 
 func _on_body_entered(body):
-	print("Hola")
 	#if body.is_in_group("enemies"):
 	body.take_damage(damage)

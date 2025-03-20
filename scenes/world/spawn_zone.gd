@@ -4,7 +4,6 @@ extends Area3D
 @export var spawn_interval: float = 2.0  # Tiempo entre spawns
 
 func _ready():
-	print($SpawnTimer)
 	$SpawnTimer.start(spawn_interval)  # Asegúrate de que tengas un Timer en el nodo
 
 func _on_SpawnTimer_timeout():

@@ -16,7 +16,6 @@ func _ready():
 	# Destruye el proyectil después del tiempo de vida
 
 func _on_body_entered(body):
-	print(body)
 	if body.is_in_group("weapon"):
 		queue_free()  # Destruir el proyectil
 		
@@ -28,7 +27,6 @@ func receive_damage(_amount: int):
 	explode()
 
 func explode():
-	print("Drag destroyed!")
 	# Aquí puedes añadir una animación, efectos de partículas, etc.
 	queue_free()
 

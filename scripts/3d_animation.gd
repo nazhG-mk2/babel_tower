@@ -7,7 +7,6 @@ extends Node3D
 var prev_position: Vector3
 
 func _ready():
-	print("hola")
 	prev_position = global_transform.origin
 	start_floating()
 

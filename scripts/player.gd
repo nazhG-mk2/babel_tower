@@ -43,10 +43,8 @@ func _ready():
 
 func attack():
 	if not can_attack:
-		print("Attack on cooldown")
 		return
 	
-	print("Attack initiated")
 	can_attack = false
 	$Area3D.monitoring = true  # Activa el área para detectar colisiones
 	$AnimationPlayer.play("area_flash")
@@ -61,10 +59,8 @@ func attack():
 	can_attack = true
 	
 func _on_body_entered(body):
-	print("dentro del rango de ataque: ", body.name)
 	if $Area3D.monitoring and body.has_method("receive_damage"):
 		body.receive_damage(attack_damage)
-		print("Inflicted", attack_damage, "damage to", body)
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("dash") and not is_dashing:
@@ -124,7 +120,6 @@ func take_damage(amount):
 	EventBus.player_damaged.emit(health, max_health)
 	# sonido dolor
 	
-	print("Jugador recibió ", amount, " de daño. Vida restante: ", health)
 
 	if health <= 0:
 		die()
