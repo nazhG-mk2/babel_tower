@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://buvwp2u8lq1vd" path="res://scenes/world/barrel.tscn" id="5_fy5o2"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://assets/player/lucy_01.png" id="6_jbrnr"]
 [ext_resource type="Texture2D" uid="uid://cxnlxryqewq0s" path="res://assets/enemies/gabriela_01.png" id="7_wd83b"]
-[ext_resource type="Script" uid="uid://bte41nutgqlef" path="res://scripts/area_diag.gd" id="8_u41t7"]
+[ext_resource type="Script" path="res://scripts/area_diag.gd" id="8_u41t7"]
 [ext_resource type="PackedScene" uid="uid://dmoi7eyujn0tq" path="res://scenes/enemies/Boss_01.tscn" id="9_p1hsa"]
 [ext_resource type="PackedScene" uid="uid://xwoaqqcep7p8" path="res://scenes/world/level_demo.tscn" id="10_r8dce"]
-[ext_resource type="Script" uid="uid://4l014fuwsjm0" path="res://scripts/fps.gd" id="10_x3002"]
-[ext_resource type="Script" uid="uid://t383kfa5udvr" path="res://scenes/world/spawn_zone.gd" id="11_2blye"]
+[ext_resource type="Script" path="res://scripts/fps.gd" id="10_x3002"]
+[ext_resource type="Script" path="res://scenes/world/spawn_zone.gd" id="11_2blye"]
 [ext_resource type="PackedScene" uid="uid://c3xu1kvw4ta2p" path="res://scenes/world/barrel_breakable.tscn" id="13_w870s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nsj4"]
@@ -41,10 +41,13 @@ size = Vector3(9.98898, 1, 9.77734)
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_j6syy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0205362)
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.478226, 0)
 material_override = SubResource("StandardMaterial3D_1nsj4")
+cast_shadow = 0
+gi_mode = 0
 mesh = SubResource("BoxMesh_ju6kx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
@@ -55,12 +58,12 @@ shape = SubResource("BoxShape3D_jdt5q")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.0108087, -0.999852, 0.0133975, -0.346005, 0.0163103, 0.938091, -0.93817, 0.0055039, -0.34613, -0.186413, 13.7013, -7.40027)
-light_color = Color(1, 0.960784, 1, 1)
 light_energy = 1.444
 shadow_opacity = 0.69
 shadow_blur = 2.212
 directional_shadow_split_1 = 0.049
 directional_shadow_blend_splits = true
+sky_mode = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 process_mode = 3
@@ -146,11 +149,18 @@ script = ExtResource("11_2blye")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyContoller/SpawnZone"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.692273, 0)
 shape = SubResource("WorldBoundaryShape3D_he24o")
-debug_color = Color(0.922221, 5.31363e-05, 0.688321, 0.42)
 
 [node name="SpawnTimer" type="Timer" parent="EnemyContoller/SpawnZone"]
 
 [node name="RigidBody3D" parent="." instance=ExtResource("13_w870s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17847, 1.55771, 2.11259)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.908172, -0.316297, 0.274188, 0, 0.655018, 0.755613, -0.418596, -0.686227, 0.594869, 14.1904, 18.0849, 22.7855)
+light_color = Color(0.112053, 0.273546, 0.629393, 1)
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 167.311
+spot_attenuation = 0.1
 
 [connection signal="timeout" from="EnemyContoller/SpawnZone/SpawnTimer" to="EnemyContoller/SpawnZone" method="_on_SpawnTimer_timeout"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://ntq2wpuqfrqp"]
 
-[ext_resource type="Script" uid="uid://dlqhq1j2xygec" path="res://scripts/player.gd" id="1_1cxgm"]
-[ext_resource type="Script" uid="uid://bp8clbuaal4yf" path="res://scripts/wings3D.gd" id="3_0owmy"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_1cxgm"]
+[ext_resource type="Script" path="res://scripts/wings3D.gd" id="3_0owmy"]
 [ext_resource type="PackedScene" uid="uid://bhapi8dm4a8mf" path="res://scenes/player/lucy.tscn" id="4_lvxji"]
 [ext_resource type="AudioStream" uid="uid://cxcd7bxi2ogij" path="res://sounds/Anime Girl Ahh.mp3" id="5_v1u31"]
 [ext_resource type="PackedScene" uid="uid://y3yqup2ahmb7" path="res://scenes/ui/health_bar.tscn" id="5_xkhfs"]
@@ -100,8 +100,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jbq5h"]
 _data = {
-&"RESET": SubResource("Animation_1iksn"),
-&"area_flash": SubResource("Animation_daejg")
+"RESET": SubResource("Animation_1iksn"),
+"area_flash": SubResource("Animation_daejg")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vl5gj"]
@@ -131,12 +131,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13, 0)
 shape = SubResource("CapsuleShape3D_rbj2s")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.450644, 0.892704, 0, -0.892704, 0.450644, 0.602494, 5.50203, 2.28978)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 9, 9)
+fov = 55.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19012, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.471609, 0)
 light_color = Color(0.596078, 0.105882, 0.0862745, 1)
-light_energy = 0.2
+light_energy = 1.5
+light_size = 0.5
 light_specular = 0.0
 omni_range = 1.20553
 
@@ -156,7 +158,7 @@ mesh = SubResource("BoxMesh_doe87")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_jbq5h")
+"": SubResource("AnimationLibrary_jbq5h")
 }
 playback_auto_capture_ease_type = 2
 
@@ -179,6 +181,7 @@ draw_pass_1 = SubResource("QuadMesh_ril73")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.755716, -0.654899, 0, 0.654899, 0.755716, 0, 0, 1.0525)
+light_color = Color(0, 0, 0, 1)
 
 [node name="Lucy" parent="." instance=ExtResource("4_lvxji")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1, 0)
@@ -192,6 +195,7 @@ transform = Transform3D(0.87001, -0.0991438, 0.482963, 0.25, 0.933013, -0.258819
 
 [node name="Wing" type="Sprite3D" parent="Lucy/Wings/Left"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.808754, 0.168962, 0)
+texture_filter = 0
 texture = ExtResource("6_0owmy")
 region_enabled = true
 region_rect = Rect2(643, 363.5, 320, 134)
@@ -201,6 +205,7 @@ transform = Transform3D(0.87001, 0.0991438, -0.482963, -0.25, 0.933012, -0.25881
 
 [node name="Wing" type="Sprite3D" parent="Lucy/Wings/Right"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.724836, 0.126824, 0)
+texture_filter = 0
 texture = ExtResource("6_0owmy")
 region_enabled = true
 region_rect = Rect2(63, 370.5, 340, 134)
