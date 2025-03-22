@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnex5vce6gp7n"]
 
 [ext_resource type="PackedScene" uid="uid://qkm5ck6scjwu" path="res://scenes/weapons/Skull.tscn" id="1_7kd1b"]
-[ext_resource type="Script" uid="uid://b3lmqhg86c4c" path="res://scripts/weapon/skull_weapon.gd" id="1_lauyp"]
+[ext_resource type="Script" path="res://scripts/weapon/skull_weapon.gd" id="1_lauyp"]
 
 [node name="Skull_Weapon" type="Node3D"]
 script = ExtResource("1_lauyp")
@@ -11,11 +11,27 @@ script = ExtResource("1_lauyp")
 [node name="Skull_01" parent="Rotator" instance=ExtResource("1_7kd1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Rotator/Skull_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0491369, 0, 0)
+light_color = Color(1, 0.584314, 0.211765, 1)
+
 [node name="Skull_02" parent="Rotator" instance=ExtResource("1_7kd1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Rotator/Skull_02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0491369, 0, 0)
+light_color = Color(1, 0.584314, 0.211765, 1)
 
 [node name="Skull_03" parent="Rotator" instance=ExtResource("1_7kd1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Rotator/Skull_03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0491369, 0, 0)
+light_color = Color(1, 0.584314, 0.211765, 1)
+
 [node name="Skull_04" parent="Rotator" instance=ExtResource("1_7kd1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Rotator/Skull_04"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0491369, 0, 0)
+light_color = Color(1, 0.584314, 0.211765, 1)
