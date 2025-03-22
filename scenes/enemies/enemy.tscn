@@ -1,8 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://dryw5mcw360cb"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_ykcao"]
+[gd_scene format=3 uid="uid://dryw5mcw360cb"]
 
 [node name="Enemy" type="Node3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_ykcao")

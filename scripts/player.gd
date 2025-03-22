@@ -37,7 +37,7 @@ func ouch(_health, _max_health):
 
 func _ready():
 	# Conecta la señal cuando un cuerpo entra en el área
-	$Area3D.body_entered.connect(_on_body_entered)
+	$HitBox.body_entered.connect(_on_body_entered)
 	EventBus.player_damaged.connect(ouch)
 	add_to_group("player")
 
@@ -113,6 +113,7 @@ func stop_dash():
 func _process(_delta):
 	if Input.is_action_just_pressed("attack"):
 		attack()
+	Global.player_position = global_position  # Guarda la posición del jugador
 	#succubus.adjust_nodes(velocity.x, velocity.y)
 
 func take_damage(amount):
@@ -129,6 +130,6 @@ func die():
 	
 func _update_sprite_flip(direction_x: float):
 	if direction_x > 0:  # Moviéndose a la derecha
-		$Area3D.rotation_degrees.y = 0
+		$HitBox.rotation_degrees.y = 0
 	elif direction_x < 0:  # Moviéndose a la izquierda
-		$Area3D.rotation_degrees.y = 180
+		$HitBox.rotation_degrees.y = 180
