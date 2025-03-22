@@ -20,6 +20,8 @@ func _process(delta):
 
 	# Eliminar si está lo suficientemente cerca
 	if global_position.distance_to(Global.player_position) < 0.5:
+		Global.exp += 2
+		EventBus.exp_earned.emit()
 		self.get_parent().queue_free()
 
 func pickup():
