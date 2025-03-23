@@ -25,7 +25,6 @@ func _process(delta):
 		self.get_parent().queue_free()
 
 func pickup():
-	print("Recolectado")
 	distance = init_pos.distance_to(Global.player_position)  # Calcular la distancia inicial
 	set_deferred("collision_layer", 0)  # Desactivar colisiones
 	set_process(true)  # Activar el movimiento

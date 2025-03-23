@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://bhapi8dm4a8mf"]
 
-[ext_resource type="Shader" uid="uid://b5ep1a63j4q33" path="res://lucy.gdshader" id="2_4gyn7"]
+[ext_resource type="Shader" uid="uid://b5ep1a63j4q33" path="res://shaders/lucy.gdshader" id="2_4gyn7"]
 [ext_resource type="Script" uid="uid://d4f8y4tjndmrm" path="res://scripts/3d_animation.gd" id="2_hhoui"]
 [ext_resource type="Script" uid="uid://cnqb3ybiitnk2" path="res://addons/jigglebones/jigglebone.gd" id="2_krpkh"]
 
