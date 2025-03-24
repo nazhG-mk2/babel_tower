@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://q3wwv0i81qxk"]
+
+[ext_resource type="Shader" uid="uid://b18ds8nc5bvyl" path="res://shaders/fairball_tail.tres" id="1_ocyax"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ocyax")
+shader_parameter/Tail_Speed = Vector2(-1.5, 0)
