@@ -48,6 +48,7 @@ mesh = SubResource("SphereMesh_61euj")
 
 [node name="Trail3D" type="MeshInstance3D" parent="FireballHead"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.957)
+visible = false
 material_override = SubResource("ShaderMaterial_61euj")
 mesh = SubResource("ImmediateMesh_0a0kn")
 script = ExtResource("5_und2j")

@@ -31,11 +31,11 @@ spread = 180.0
 initial_velocity_min = -5.0
 initial_velocity_max = 5.0
 gravity = Vector3(0, -5, 0)
-linear_accel_min = -5.0
+linear_accel_min = -8.0
 linear_accel_max = -2.23517e-06
-scale_min = 0.1
-scale_max = 0.5
-color = Color(0.993103, 0.502262, 1, 0.309804)
+scale_min = 0.5
+scale_max = 1.2
+color = Color(0.993, 0.502, 1, 0.79)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ril73"]
 
