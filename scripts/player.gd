@@ -28,6 +28,7 @@ func ouch(_health, _max_health):
 	particles.global_position = global_position + Vector3(0, 1, 0.2)
 	particles.restart()
 	particles.emitting = true
+	Global.health = _health
 	
 	audio_player.play(0.8)
 	audio_player.volume_db = -40 

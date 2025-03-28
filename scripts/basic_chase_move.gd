@@ -24,10 +24,13 @@ func _on_body_entered(body):
 		print(dropped_item)
 		get_parent().add_child(dropped_item)  # Agregarlo a la escena
 		queue_free()  # Destruir el proyectil
+		Global.num_enemies -= 1
 		
 	if body.is_in_group("player"):  # Verifica si es el jugador
 		body.take_damage(10)  # Aplica daño
+		Global.num_enemies -= 1
 		queue_free()  # Destruir el proyectil
+		
 
 func receive_damage(_amount: int):
 	explode()
@@ -35,8 +38,6 @@ func receive_damage(_amount: int):
 func explode():
 	# Aquí puedes añadir una animación, efectos de partículas, etc.
 	queue_free()
-	
-
 
 func _process(delta):
 	var player_position = player.global_transform.origin
