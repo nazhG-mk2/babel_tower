@@ -10,6 +10,7 @@ func _on_SpawnTimer_timeout():
 	var enemy = enemy_scene.instantiate()
 	enemy.global_transform.origin = get_random_spawn_position()
 	get_parent().add_child(enemy)
+	Global.num_enemies += 1
 
 func get_random_spawn_position() -> Vector3:
 	var shape = $CollisionShape3D.shape
