@@ -1,13 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4k3c6j5fglof"]
+[gd_scene load_steps=13 format=3 uid="uid://c4k3c6j5fglof"]
 
+[ext_resource type="Shader" uid="uid://cfwc7wnxy0tc8" path="res://shaders/fireball_head.tres" id="1_8qnco"]
 [ext_resource type="Script" uid="uid://6nbs52xetad" path="res://scripts/standard_Ivy_projectile.gd" id="1_21rxm"]
+[ext_resource type="ArrayMesh" uid="uid://c5xid6gyp0t85" path="res://models/fireball_head.obj" id="2_0a0kn"]
+[ext_resource type="Shader" uid="uid://cmyqmfkgwcmo2" path="res://shaders/fireball.tres" id="3_6cffh"]
+[ext_resource type="Shader" uid="uid://b18ds8nc5bvyl" path="res://shaders/fairball_tail.tres" id="5_0a0kn"]
+[ext_resource type="Script" uid="uid://c5g0fjqiq6x4l" path="res://scripts/weapon/Trail3D.gd" id="5_und2j"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p62uh"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swnem"]
-albedo_color = Color(1, 0, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0a0kn"]
+render_priority = 1
+shader = ExtResource("1_8qnco")
+shader_parameter/Fire_color = Color(64.641, 0.69, 0.892, 1)
+shader_parameter/Speed = Vector2(0, -2)
 
-[sub_resource type="SphereMesh" id="SphereMesh_15uvm"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6cffh"]
+render_priority = 0
+shader = ExtResource("3_6cffh")
+shader_parameter/Ball_Color = Color(1, 0.427451, 0.670588, 1)
+shader_parameter/softness = 1.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_61euj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_61euj"]
+render_priority = 0
+shader = ExtResource("5_0a0kn")
+shader_parameter/Tail_Speed = Vector2(0, 0)
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_0a0kn"]
 
 [node name="proyectil" type="Area3D"]
 script = ExtResource("1_21rxm")
@@ -15,7 +36,25 @@ script = ExtResource("1_21rxm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_p62uh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_swnem")
-mesh = SubResource("SphereMesh_15uvm")
-skeleton = NodePath("../CollisionShape3D")
+[node name="FireballHead" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_0a0kn")
+cast_shadow = 0
+mesh = ExtResource("2_0a0kn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FireballHead"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.435525)
+material_override = SubResource("ShaderMaterial_6cffh")
+mesh = SubResource("SphereMesh_61euj")
+
+[node name="Trail3D" type="MeshInstance3D" parent="FireballHead"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.957)
+visible = false
+material_override = SubResource("ShaderMaterial_61euj")
+mesh = SubResource("ImmediateMesh_0a0kn")
+script = ExtResource("5_und2j")
+fromWidth = 0.1
+toWidth = 1.0
+scaleAcceleration = 0.642
+motionDelta = 0.0
+lifespan = 0.3
+startColor = Color(1, 0.203922, 1, 1)

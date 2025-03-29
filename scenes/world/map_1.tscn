@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://jnm3d7m8hbn1"]
+[gd_scene load_steps=31 format=3 uid="uid://jnm3d7m8hbn1"]
 
 [ext_resource type="PackedScene" uid="uid://ntq2wpuqfrqp" path="res://scenes/player/player.tscn" id="1_j6syy"]
 [ext_resource type="Texture2D" uid="uid://c2468b32j8sqa" path="res://assets/textures/suelo_ladrillo.jpeg" id="2_hic1v"]
@@ -6,12 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://buvwp2u8lq1vd" path="res://scenes/world/barrel.tscn" id="5_fy5o2"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://assets/player/lucy_01.png" id="6_jbrnr"]
 [ext_resource type="Texture2D" uid="uid://cxnlxryqewq0s" path="res://assets/enemies/gabriela_01.png" id="7_wd83b"]
-[ext_resource type="Script" path="res://scripts/area_diag.gd" id="8_u41t7"]
+[ext_resource type="Script" uid="uid://bte41nutgqlef" path="res://scripts/area_diag.gd" id="8_u41t7"]
 [ext_resource type="PackedScene" uid="uid://dmoi7eyujn0tq" path="res://scenes/enemies/Boss_01.tscn" id="9_p1hsa"]
 [ext_resource type="PackedScene" uid="uid://xwoaqqcep7p8" path="res://scenes/world/level_demo.tscn" id="10_r8dce"]
-[ext_resource type="Script" path="res://scripts/fps.gd" id="10_x3002"]
-[ext_resource type="Script" path="res://scenes/world/spawn_zone.gd" id="11_2blye"]
+[ext_resource type="Script" uid="uid://4l014fuwsjm0" path="res://scripts/fps.gd" id="10_x3002"]
+[ext_resource type="Script" uid="uid://t383kfa5udvr" path="res://scenes/world/spawn_zone.gd" id="11_2blye"]
+[ext_resource type="PackedScene" uid="uid://cwkrkgfq7i8da" path="res://scenes/world/resourse.tscn" id="13_ipgmi"]
 [ext_resource type="PackedScene" uid="uid://c3xu1kvw4ta2p" path="res://scenes/world/barrel_breakable.tscn" id="13_w870s"]
+[ext_resource type="Shader" uid="uid://cfwc7wnxy0tc8" path="res://shaders/fireball_head.tres" id="14_446w5"]
+[ext_resource type="ArrayMesh" uid="uid://c5xid6gyp0t85" path="res://models/fireball_head.obj" id="14_ipgmi"]
+[ext_resource type="Shader" uid="uid://cmyqmfkgwcmo2" path="res://shaders/fireball.tres" id="16_hm0vq"]
+[ext_resource type="Material" uid="uid://q3wwv0i81qxk" path="res://scenes/fireball_tail.tres" id="17_5xflq"]
+[ext_resource type="Script" uid="uid://c5g0fjqiq6x4l" path="res://scripts/weapon/Trail3D.gd" id="18_jilvv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nsj4"]
 albedo_texture = ExtResource("2_hic1v")
@@ -37,6 +43,22 @@ fill_to = Vector2(0, 0)
 size = Vector3(9.98898, 1, 9.77734)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_he24o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hm0vq"]
+render_priority = 1
+shader = ExtResource("14_446w5")
+shader_parameter/Fire_color = Color(64.641, 0.69, 0.892, 1)
+shader_parameter/Speed = Vector2(0, -2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xoo7p"]
+render_priority = 0
+shader = ExtResource("16_hm0vq")
+shader_parameter/Ball_Color = Color(1, 0.427451, 0.670588, 1)
+shader_parameter/softness = 1.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_5xflq"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_5xflq"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -121,7 +143,7 @@ transform = Transform3D(0.852447, 0, 0.948134, 0, 1.275, 0, -0.948134, 0, 0.8524
 [node name="GridMap" parent="." instance=ExtResource("10_r8dce")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10.9, 0, -2.62268e-07)
 
-[node name="Label" type="Label" parent="."]
+[node name="FPS_label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("10_x3002")
@@ -162,5 +184,28 @@ light_specular = 0.0
 shadow_enabled = true
 spot_range = 167.311
 spot_attenuation = 0.1
+
+[node name="Resource" parent="." instance=ExtResource("13_ipgmi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23511, 1.12957, 9.55495)
+
+[node name="FireballHead" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.83065, 2.44272, 8.33169)
+material_override = SubResource("ShaderMaterial_hm0vq")
+cast_shadow = 0
+mesh = ExtResource("14_ipgmi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FireballHead"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.435525)
+material_override = SubResource("ShaderMaterial_xoo7p")
+mesh = SubResource("SphereMesh_5xflq")
+
+[node name="Trail3D" type="MeshInstance3D" parent="FireballHead"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = ExtResource("17_5xflq")
+mesh = SubResource("ImmediateMesh_5xflq")
+script = ExtResource("18_jilvv")
+fromWidth = 1.0
+toWidth = 1.0
+startColor = Color(1, 0.203922, 1, 1)
 
 [connection signal="timeout" from="EnemyContoller/SpawnZone/SpawnTimer" to="EnemyContoller/SpawnZone" method="_on_SpawnTimer_timeout"]

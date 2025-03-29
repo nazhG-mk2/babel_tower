@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://bhapi8dm4a8mf"]
 
-[ext_resource type="Shader" uid="uid://b5ep1a63j4q33" path="res://lucy.gdshader" id="2_4gyn7"]
+[ext_resource type="Shader" uid="uid://b5ep1a63j4q33" path="res://shaders/lucy.gdshader" id="2_4gyn7"]
 [ext_resource type="Script" uid="uid://d4f8y4tjndmrm" path="res://scripts/3d_animation.gd" id="2_hhoui"]
 [ext_resource type="Script" uid="uid://cnqb3ybiitnk2" path="res://addons/jigglebones/jigglebone.gd" id="2_krpkh"]
 
@@ -261,7 +261,7 @@ damping = 0.5
 metadata/_custom_type_script = "uid://cnqb3ybiitnk2"
 
 [node name="arm_r" type="Node3D" parent="Skeleton"]
-transform = Transform3D(-0.168933, -0.914733, -0.367051, 0.382478, -0.40406, 0.830931, -0.90839, -1.70171e-05, 0.418124, 0.0718313, -0.935335, -0.522632)
+transform = Transform3D(-0.168933, -0.914733, -0.367051, 0.382478, -0.40406, 0.830931, -0.90839, -1.70171e-05, 0.418124, 0.071831, -0.935335, -0.522632)
 top_level = true
 script = ExtResource("2_krpkh")
 bone_name = "Arm1_r"

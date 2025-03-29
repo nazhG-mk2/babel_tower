@@ -1,12 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://ntq2wpuqfrqp"]
+[gd_scene load_steps=17 format=3 uid="uid://ntq2wpuqfrqp"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_1cxgm"]
-[ext_resource type="Script" path="res://scripts/wings3D.gd" id="3_0owmy"]
+[ext_resource type="Script" uid="uid://dlqhq1j2xygec" path="res://scripts/player.gd" id="1_1cxgm"]
+[ext_resource type="Script" uid="uid://bp8clbuaal4yf" path="res://scripts/wings3D.gd" id="3_0owmy"]
 [ext_resource type="PackedScene" uid="uid://bhapi8dm4a8mf" path="res://scenes/player/lucy.tscn" id="4_lvxji"]
 [ext_resource type="AudioStream" uid="uid://cxcd7bxi2ogij" path="res://sounds/Anime Girl Ahh.mp3" id="5_v1u31"]
 [ext_resource type="PackedScene" uid="uid://y3yqup2ahmb7" path="res://scenes/ui/health_bar.tscn" id="5_xkhfs"]
 [ext_resource type="Texture2D" uid="uid://0f3fxfuf30b6" path="res://assets/player/wings.png" id="6_0owmy"]
 [ext_resource type="PackedScene" uid="uid://dnex5vce6gp7n" path="res://scenes/weapons/Skull_weapon.tscn" id="7_0owmy"]
+[ext_resource type="Script" uid="uid://b17318j0sxmu0" path="res://scripts/collect.gd" id="8_qek5x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbj2s"]
 
@@ -19,91 +20,6 @@ albedo_color = Color(1, 0, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_doe87"]
 size = Vector3(0.3, 0.3, 0.3)
 
-[sub_resource type="Animation" id="Animation_1iksn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Area3D/MeshInstance3D:material_override:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Area3D/MeshInstance3D:mesh:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.3, 0.3, 0.3)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Area3D/MeshInstance3D:transparency")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.85]
-}
-
-[sub_resource type="Animation" id="Animation_daejg"]
-resource_name = "area_flash"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Area3D/MeshInstance3D:material_override:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 0, 1, 0), Color(1, 0, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Area3D/MeshInstance3D:mesh:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = false
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.3, 0.3, 0.3), Vector3(0.4, 0.4, 0.4), Vector3(0.4, 0.3, 0.3)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Area3D/MeshInstance3D:transparency")
-tracks/2/interp = 1
-tracks/2/loop_wrap = false
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.85, 0.1, 0.8]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jbq5h"]
-_data = {
-"RESET": SubResource("Animation_1iksn"),
-"area_flash": SubResource("Animation_daejg")
-}
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vl5gj"]
 transparency = 1
 blend_mode = 4
@@ -115,18 +31,22 @@ spread = 180.0
 initial_velocity_min = -5.0
 initial_velocity_max = 5.0
 gravity = Vector3(0, -5, 0)
-linear_accel_min = -5.0
+linear_accel_min = -8.0
 linear_accel_max = -2.23517e-06
-scale_min = 0.1
-scale_max = 0.5
-color = Color(0.993103, 0.502262, 1, 0.309804)
+scale_min = 0.5
+scale_max = 1.2
+color = Color(0.993, 0.502, 1, 0.79)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ril73"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0owmy"]
+height = 0.001
+radius = 2.0
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_1cxgm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Body" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13, 0)
 shape = SubResource("CapsuleShape3D_rbj2s")
 
@@ -142,25 +62,19 @@ light_size = 0.5
 light_specular = 0.0
 omni_range = 1.20553
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="HitBox" type="Area3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 1, 0)
 monitoring = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_hkmbl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HitBox"]
 transform = Transform3D(-0.707107, 0.5, 0.5, 0, 0.707107, -0.707107, -0.707107, -0.5, -0.5, 0, 0.635, 0)
 material_override = SubResource("StandardMaterial3D_v454f")
 transparency = 0.85
 mesh = SubResource("BoxMesh_doe87")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_jbq5h")
-}
-playback_auto_capture_ease_type = 2
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_xkhfs")]
 
@@ -212,3 +126,12 @@ region_rect = Rect2(63, 370.5, 340, 134)
 
 [node name="Skull_Weapon" parent="." instance=ExtResource("7_0owmy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.868735, 0)
+
+[node name="CollectionArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("8_qek5x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollectionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_0owmy")
