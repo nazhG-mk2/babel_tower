@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://c4k3c6j5fglof"]
 
 [ext_resource type="Shader" uid="uid://cfwc7wnxy0tc8" path="res://shaders/fireball_head.tres" id="1_8qnco"]
-[ext_resource type="Script" uid="uid://6nbs52xetad" path="res://scripts/standard_Ivy_projectile.gd" id="1_21rxm"]
+[ext_resource type="Script" path="res://scripts/standard_Ivy_projectile.gd" id="1_21rxm"]
 [ext_resource type="ArrayMesh" uid="uid://c5xid6gyp0t85" path="res://models/fireball_head.obj" id="2_0a0kn"]
 [ext_resource type="Shader" uid="uid://cmyqmfkgwcmo2" path="res://shaders/fireball.tres" id="3_6cffh"]
 [ext_resource type="Shader" uid="uid://b18ds8nc5bvyl" path="res://shaders/fairball_tail.tres" id="5_0a0kn"]
-[ext_resource type="Script" uid="uid://c5g0fjqiq6x4l" path="res://scripts/weapon/Trail3D.gd" id="5_und2j"]
+[ext_resource type="Script" path="res://scripts/weapon/Trail3D.gd" id="5_und2j"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p62uh"]
 
@@ -28,7 +28,7 @@ render_priority = 0
 shader = ExtResource("5_0a0kn")
 shader_parameter/Tail_Speed = Vector2(0, 0)
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_0a0kn"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_wdj73"]
 
 [node name="proyectil" type="Area3D"]
 script = ExtResource("1_21rxm")
@@ -50,7 +50,7 @@ mesh = SubResource("SphereMesh_61euj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.957)
 visible = false
 material_override = SubResource("ShaderMaterial_61euj")
-mesh = SubResource("ImmediateMesh_0a0kn")
+mesh = SubResource("ImmediateMesh_wdj73")
 script = ExtResource("5_und2j")
 fromWidth = 0.1
 toWidth = 1.0
