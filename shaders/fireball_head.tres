@@ -17,7 +17,7 @@ texture_type = 1
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8qbgg"]
 gradient = SubResource("Gradient_duwbj")
-fill_from = Vector2(1, 0.730769)
+fill_from = Vector2(0.974359, 0.42735)
 fill_to = Vector2(1, 1)
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_85hqe"]

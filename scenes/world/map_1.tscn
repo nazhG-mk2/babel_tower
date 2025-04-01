@@ -6,18 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://buvwp2u8lq1vd" path="res://scenes/world/barrel.tscn" id="5_fy5o2"]
 [ext_resource type="Texture2D" uid="uid://6vmxie86fvnv" path="res://assets/player/lucy_01.png" id="6_jbrnr"]
 [ext_resource type="Texture2D" uid="uid://cxnlxryqewq0s" path="res://assets/enemies/gabriela_01.png" id="7_wd83b"]
-[ext_resource type="Script" path="res://scripts/area_diag.gd" id="8_u41t7"]
+[ext_resource type="Script" uid="uid://bte41nutgqlef" path="res://scripts/area_diag.gd" id="8_u41t7"]
 [ext_resource type="PackedScene" uid="uid://dmoi7eyujn0tq" path="res://scenes/enemies/Boss_01.tscn" id="9_p1hsa"]
 [ext_resource type="PackedScene" uid="uid://xwoaqqcep7p8" path="res://scenes/world/level_demo.tscn" id="10_r8dce"]
-[ext_resource type="Script" path="res://scripts/fps.gd" id="10_x3002"]
-[ext_resource type="Script" path="res://scenes/world/spawn_zone.gd" id="11_2blye"]
+[ext_resource type="Script" uid="uid://4l014fuwsjm0" path="res://scripts/fps.gd" id="10_x3002"]
+[ext_resource type="Script" uid="uid://t383kfa5udvr" path="res://scenes/world/spawn_zone.gd" id="11_2blye"]
 [ext_resource type="PackedScene" uid="uid://cwkrkgfq7i8da" path="res://scenes/world/resourse.tscn" id="13_ipgmi"]
 [ext_resource type="PackedScene" uid="uid://c3xu1kvw4ta2p" path="res://scenes/world/barrel_breakable.tscn" id="13_w870s"]
 [ext_resource type="Shader" uid="uid://cfwc7wnxy0tc8" path="res://shaders/fireball_head.tres" id="14_446w5"]
 [ext_resource type="ArrayMesh" uid="uid://c5xid6gyp0t85" path="res://models/fireball_head.obj" id="14_ipgmi"]
 [ext_resource type="Shader" uid="uid://cmyqmfkgwcmo2" path="res://shaders/fireball.tres" id="16_hm0vq"]
 [ext_resource type="Material" uid="uid://q3wwv0i81qxk" path="res://scenes/fireball_tail.tres" id="17_5xflq"]
-[ext_resource type="Script" path="res://scripts/weapon/Trail3D.gd" id="18_jilvv"]
+[ext_resource type="Script" uid="uid://c5g0fjqiq6x4l" path="res://scripts/weapon/Trail3D.gd" id="18_jilvv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nsj4"]
 albedo_texture = ExtResource("2_hic1v")
@@ -58,7 +58,7 @@ shader_parameter/softness = 1.5
 
 [sub_resource type="SphereMesh" id="SphereMesh_5xflq"]
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_o1na5"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_5xflq"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -202,7 +202,7 @@ mesh = SubResource("SphereMesh_5xflq")
 [node name="Trail3D" type="MeshInstance3D" parent="FireballHead"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 material_override = ExtResource("17_5xflq")
-mesh = SubResource("ImmediateMesh_o1na5")
+mesh = SubResource("ImmediateMesh_5xflq")
 script = ExtResource("18_jilvv")
 fromWidth = 1.0
 toWidth = 1.0

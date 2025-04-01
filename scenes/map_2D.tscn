@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://3atii185nyuv"]
+
+[ext_resource type="Texture2D" uid="uid://ttx7mfukbjuh" path="res://assets/icon.svg" id="1_o1wbl"]
+[ext_resource type="Script" uid="uid://bcoouixhm0hu6" path="res://scripts/player_2D.gd" id="1_ywrum"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ywrum"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o1wbl"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Node2D" type="Node2D" parent="SubViewport"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="SubViewport/Node2D"]
+position = Vector2(161, 67)
+script = ExtResource("1_ywrum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewport/Node2D/CharacterBody2D"]
+shape = SubResource("CircleShape2D_ywrum")
+debug_color = Color(0.898277, 0.000183089, 0.769414, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/Node2D/CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_o1wbl")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.592843, 0.805318, 0, -0.805318, 0.592843, -1.19209e-07, 1.73985, 1.41218)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+texture = SubResource("ViewportTexture_o1wbl")

@@ -23,6 +23,7 @@ parameter_name = "Tail_Speed"
 operator = 2
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_u6uem"]
+output_port_for_preview = 0
 input_name = "color"
 
 [resource]

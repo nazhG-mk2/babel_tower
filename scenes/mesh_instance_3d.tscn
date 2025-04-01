@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7k2b4sdvu5dg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2oib"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tvvxl"]
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_p2oib")
+mesh = SubResource("BoxMesh_tvvxl")
