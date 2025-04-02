@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnex5vce6gp7n"]
 
 [ext_resource type="PackedScene" uid="uid://qkm5ck6scjwu" path="res://scenes/weapons/Skull.tscn" id="1_7kd1b"]
-[ext_resource type="Script" path="res://scripts/weapon/skull_weapon.gd" id="1_lauyp"]
+[ext_resource type="Script" uid="uid://b3lmqhg86c4c" path="res://scripts/weapon/skull_weapon.gd" id="1_lauyp"]
 
 [node name="Skull_Weapon" type="Node3D"]
 script = ExtResource("1_lauyp")
