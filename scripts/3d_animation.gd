@@ -6,24 +6,29 @@ extends Node3D
 
 var prev_position: Vector3
 
+@export_group("Ajustes de GiggleBone")
+@export_range(0.0, 100.0, 0.1) var stiffness: float = 5.0
+@export_range(0.0, 100.0, 0.1) var damping: float = 1.0
+
 func _ready():
 	prev_position = global_transform.origin
 	start_floating()
-
-func _physics_process(delta):
-	pass
-	#var velocity = (global_transform.origin - prev_position) / delta
-	#prev_position = global_transform.origin
-	#
-	## Simular rebote de los pechos basado en la velocidad
-	#var jiggle_intensity = velocity.length() * 0.001
-	#
-	#breast_l.position.y += jiggle_intensity
-	#breast_r.position.y += jiggle_intensity
-	#
-	## Suavizar el movimiento para evitar cambios bruscos
-	#breast_l.position.y = lerp(breast_l.position.y, 0.0, 0.0)
-	#breast_r.position.y = lerp(breast_r.position.y, 0.0, 0.0)
+	Global.player = self
+	
+	$Skeleton/arm_l.stiffness = stiffness
+	$Skeleton/arm_l.damping = damping	
+	$Skeleton/arm_r.stiffness = stiffness
+	$Skeleton/arm_r.damping = damping
+	
+	$Skeleton/But_l.stiffness = stiffness
+	$Skeleton/But_l.damping = damping	
+	$Skeleton/But_r.stiffness = stiffness
+	$Skeleton/But_r.damping = damping
+	
+	$Skeleton/Breast_l.stiffness = stiffness
+	$Skeleton/Breast_l.damping = damping	
+	$Skeleton/Breast_r.stiffness = stiffness
+	$Skeleton/Breast_r.damping = damping
 
 func start_floating():
 	var tween2 = create_tween().set_loops()
