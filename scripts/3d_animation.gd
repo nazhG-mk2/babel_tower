@@ -13,7 +13,7 @@ var prev_position: Vector3
 func _ready():
 	prev_position = global_transform.origin
 	start_floating()
-	Global.player = self
+	Global.model = self
 	
 	$Skeleton/arm_l.stiffness = stiffness
 	$Skeleton/arm_l.damping = damping	

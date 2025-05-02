@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://3atii185nyuv"]
+[gd_scene load_steps=7 format=3 uid="uid://3atii185nyuv"]
 
 [ext_resource type="PackedScene" uid="uid://xe14f7p7tjia" path="res://scenes/world/collition_world.tscn" id="1_o1wbl"]
 [ext_resource type="Script" uid="uid://vuie4hfv2vad" path="res://scripts/sub_viewport.gd" id="1_ywrum"]
 [ext_resource type="PackedScene" uid="uid://bhapi8dm4a8mf" path="res://scenes/player/lucy.tscn" id="3_1woit"]
+[ext_resource type="Script" uid="uid://buaxubo1xxjcy" path="res://scripts/playe_position.gd" id="3_v00ao"]
 
 [sub_resource type="Environment" id="Environment_o1wbl"]
 background_mode = 1
@@ -21,17 +22,20 @@ script = ExtResource("1_ywrum")
 
 [node name="CollitionWorld" parent="SubViewport" instance=ExtResource("1_o1wbl")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.507704, 0.861532, 0, -0.861532, 0.507704, 603.688, 213.932, 347.666)
-
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 549.222, 0, 301.949)
 pixel_size = 1.0
 texture = SubResource("ViewportTexture_o1wbl")
 
-[node name="Lucy" parent="." instance=ExtResource("3_1woit")]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.817949, 0.575291, 0, -0.575291, 0.817949, 0, 7.14358, 6.88973)
+
+[node name="Player" type="Node3D" parent="."]
+script = ExtResource("3_v00ao")
+
+[node name="Lucy" parent="Player" instance=ExtResource("3_1woit")]
 transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 50, 0)
 stiffness = 74.8
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.817949, 0.575291, 0, -0.575291, 0.817949, 0, 7.14358, 6.88973)
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.507704, 0.861532, 0, -0.861532, 0.507704, -56.8737, 213.932, 113.974)
