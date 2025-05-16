@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvl1p1xhv32s4"]
 
-[ext_resource type="Script" uid="uid://bjbch8fg7htfx" path="res://scripts/enemyChase.gd" id="1_7hdug"]
+[ext_resource type="Script" uid="uid://bjbch8fg7htfx" path="res://scripts/enemyChase.gd" id="1_em83i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xl80y"]
 
@@ -8,7 +8,8 @@
 motion_mode = 1
 floor_stop_on_slope = false
 floor_block_on_wall = false
-script = ExtResource("1_7hdug")
+script = ExtResource("1_em83i")
+speed = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xl80y")

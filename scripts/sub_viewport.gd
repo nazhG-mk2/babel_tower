@@ -4,7 +4,7 @@ extends SubViewport
 @export var sub_viewport: SubViewport
 @export var navigation_region: NavigationRegion2D
 
-func _process(delta):
+func _process(_delta):
 	if not sub_viewport or not navigation_region:
 		return
 

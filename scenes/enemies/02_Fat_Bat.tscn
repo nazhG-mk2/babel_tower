@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqt0ed1bgx6d4"]
+
+[ext_resource type="Script" uid="uid://bjbch8fg7htfx" path="res://scripts/enemyChase.gd" id="1_laopf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xl80y"]
+
+[node name="CharacterBody2D2" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+motion_mode = 1
+floor_stop_on_slope = false
+floor_block_on_wall = false
+script = ExtResource("1_laopf")
+speed = 60.0
+enemy_type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xl80y")
+debug_color = Color(0.558761, 0.396525, 1, 0.42)

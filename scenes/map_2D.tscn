@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://3atii185nyuv"]
+[gd_scene load_steps=11 format=3 uid="uid://3atii185nyuv"]
 
+[ext_resource type="Script" uid="uid://c6cxx4cbed2go" path="res://scripts/World.gd" id="1_426a1"]
 [ext_resource type="PackedScene" uid="uid://xe14f7p7tjia" path="res://scenes/world/collition_world.tscn" id="1_o1wbl"]
 [ext_resource type="Script" uid="uid://vuie4hfv2vad" path="res://scripts/sub_viewport.gd" id="1_ywrum"]
 [ext_resource type="PackedScene" uid="uid://bhapi8dm4a8mf" path="res://scenes/player/lucy.tscn" id="3_1woit"]
@@ -17,6 +18,7 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="BoxMesh" id="BoxMesh_i7r2h"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_426a1")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_o1wbl")

@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 
 EventBus="*res://scripts/EventBus.gd"
 Global="*res://scripts/global.gd"
+EnemyManager="*res://scripts/EnemyManager.gd"
 
 [editor_plugins]
 

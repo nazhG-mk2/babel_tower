@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://xe14f7p7tjia"]
+[gd_scene load_steps=54 format=3 uid="uid://xe14f7p7tjia"]
 
 [ext_resource type="Script" uid="uid://bcoouixhm0hu6" path="res://scripts/player_2D.gd" id="1_ff6le"]
 [ext_resource type="Texture2D" uid="uid://dgaufl7xrn6rn" path="res://assets/world/Screenshot_32.png" id="1_gyxml"]
@@ -9,9 +9,10 @@
 [ext_resource type="Script" uid="uid://chur2cp5cvdqb" path="res://addons/rmsmartshape/shapes/point_array.gd" id="7_jwwai"]
 [ext_resource type="Script" uid="uid://bmrj7o7epnxo" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="8_txacg"]
 [ext_resource type="Script" uid="uid://dx1e0lqvrhonx" path="res://addons/rmsmartshape/materials/shape_material.gd" id="9_0nf2y"]
-[ext_resource type="Script" uid="uid://d3we6vy6sd8lw" path="res://scripts/enemy_manager.gd" id="10_124kd"]
 [ext_resource type="Script" uid="uid://c5bn8c4gmkfeu" path="res://addons/rmsmartshape/shapes/shape_render.gd" id="10_jrkmy"]
-[ext_resource type="PackedScene" uid="uid://cvl1p1xhv32s4" path="res://scenes/enemies/enemy2D.tscn" id="11_124kd"]
+[ext_resource type="Script" uid="uid://djcyixk83gbk8" path="res://scripts/enemy_spawner.gd" id="11_jwwai"]
+[ext_resource type="PackedScene" uid="uid://bqt0ed1bgx6d4" path="res://scenes/enemies/02_Fat_Bat.tscn" id="12_dtcmk"]
+[ext_resource type="PackedScene" uid="uid://cvl1p1xhv32s4" path="res://scenes/enemies/01_Imp.tscn" id="12_jwwai"]
 [ext_resource type="Script" uid="uid://pw4ipc82vv6u" path="res://scripts/stop_coliseo.gd" id="13_dtcmk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ywrum"]
@@ -293,6 +294,8 @@ centered = false
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(570, 534)
+collision_layer = 3
+collision_mask = 3
 floor_stop_on_slope = false
 floor_block_on_wall = false
 script = ExtResource("1_ff6le")
@@ -302,6 +305,8 @@ shape = SubResource("CircleShape2D_ywrum")
 debug_color = Color(0.854902, 0, 0.886275, 1)
 
 [node name="Area2D" type="Area2D" parent="Player"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("2_jrkmy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
@@ -311,6 +316,8 @@ shape = SubResource("CircleShape2D_124kd")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Node2D"]
 position = Vector2(1470, 583)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2(-730, -34)
@@ -330,6 +337,8 @@ rotation = 1.57079
 shape = SubResource("CapsuleShape2D_cfh8a")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Node2D"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="SS2D_Shape" type="Node2D" parent="Node2D/StaticBody2D4"]
 script = ExtResource("4_124kd")
@@ -348,8 +357,8 @@ polygon = PackedVector2Array(370.964, 994.309, 374.735, 1000.56, 377.342, 1006.9
 
 [node name="EnemyManager" type="Node2D" parent="."]
 position = Vector2(1, 0)
-script = ExtResource("10_124kd")
-enemy_scene = ExtResource("11_124kd")
+script = ExtResource("11_jwwai")
+enemy_scenes = Array[PackedScene]([ExtResource("12_jwwai"), ExtResource("12_dtcmk")])
 
 [node name="Area2D" type="Area2D" parent="EnemyManager"]
 position = Vector2(602, 583)

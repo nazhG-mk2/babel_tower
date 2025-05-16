@@ -33,6 +33,8 @@ func spawn_enemies():
 		if is_position_free(spawn_pos) and enemy_scenes.size() > 0:
 			var scene = enemy_scenes[randi() % enemy_scenes.size()]
 			var enemy = scene.instantiate()
+			var id = EnemyManager.spawn_enemy(enemy)
+			enemy.id = id
 			enemy.global_position = spawn_pos
 			add_child(enemy)
 		attempts += 1
