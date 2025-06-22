@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdsul0iohrveu"]
+
+[ext_resource type="Script" uid="uid://dkdruvjh0t1qx" path="res://scripts/enemies/EnemyModel.gd" id="1_niflm"]
+[ext_resource type="ArrayMesh" uid="uid://dyt3smaehi4qg" path="res://models/enemies/Imp.obj" id="2_5141f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cme6q"]
+albedo_color = Color(0.784314, 0, 0, 1)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_niflm")
+
+[node name="Imp" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 0, 8.22054, 0)
+material_override = SubResource("StandardMaterial3D_cme6q")
+mesh = ExtResource("2_5141f")

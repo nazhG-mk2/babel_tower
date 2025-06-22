@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn3gsuv4rmdp5"]
+
+[ext_resource type="Script" uid="uid://d1gwu5kjb0qe" path="res://scripts/enemies/Bull.gd" id="1_0lfjd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_74efb"]
+radius = 50.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 6
+collision_mask = 7
+script = ExtResource("1_0lfjd")
+enemy_type = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_74efb")
+debug_color = Color(0.998769, 0, 0.133119, 0.42)

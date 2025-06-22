@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://3atii185nyuv"]
+[gd_scene load_steps=12 format=3 uid="uid://3atii185nyuv"]
 
-[ext_resource type="Script" uid="uid://c6cxx4cbed2go" path="res://scripts/World.gd" id="1_426a1"]
-[ext_resource type="PackedScene" uid="uid://xe14f7p7tjia" path="res://scenes/world/collition_world.tscn" id="1_o1wbl"]
-[ext_resource type="Script" uid="uid://vuie4hfv2vad" path="res://scripts/sub_viewport.gd" id="1_ywrum"]
-[ext_resource type="PackedScene" uid="uid://bhapi8dm4a8mf" path="res://scenes/player/lucy.tscn" id="3_1woit"]
-[ext_resource type="Script" uid="uid://buaxubo1xxjcy" path="res://scripts/playe_position.gd" id="3_v00ao"]
-[ext_resource type="ArrayMesh" uid="uid://bgbnmgjnfrxsa" path="res://models/coliseo_abierto.obj" id="5_i7r2h"]
+[ext_resource type="Script" uid="uid://c6cxx4cbed2go" path="res://scripts/World.gd" id="1_f450b"]
+[ext_resource type="Script" uid="uid://vuie4hfv2vad" path="res://scripts/sub_viewport.gd" id="2_q8ial"]
+[ext_resource type="PackedScene" uid="uid://xe14f7p7tjia" path="res://scenes/world/collition_world.tscn" id="3_k2iym"]
+[ext_resource type="Script" uid="uid://buaxubo1xxjcy" path="res://scripts/playe_position.gd" id="4_62oq8"]
+[ext_resource type="PackedScene" uid="uid://bhapi8dm4a8mf" path="res://scenes/player/lucy.tscn" id="5_mw38x"]
+[ext_resource type="ArrayMesh" uid="uid://bgbnmgjnfrxsa" path="res://models/coliseo_abierto.obj" id="6_a1nmn"]
+[ext_resource type="PackedScene" uid="uid://dkxgarlcfbo5m" path="res://scenes/enemies/Wisp.model.tscn" id="7_q8ial"]
 
 [sub_resource type="Environment" id="Environment_o1wbl"]
 background_mode = 1
@@ -18,16 +19,16 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="BoxMesh" id="BoxMesh_i7r2h"]
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_426a1")
+script = ExtResource("1_f450b")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_o1wbl")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(1200, 1200)
-script = ExtResource("1_ywrum")
+script = ExtResource("2_q8ial")
 
-[node name="CollitionWorld" parent="SubViewport" instance=ExtResource("1_o1wbl")]
+[node name="CollitionWorld" parent="SubViewport" instance=ExtResource("3_k2iym")]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 1200)
@@ -39,18 +40,19 @@ texture = SubResource("ViewportTexture_o1wbl")
 transform = Transform3D(1, 0, 0, 0, 0.817949, 0.575291, 0, -0.575291, 0.817949, 0, 7.14358, 6.88973)
 
 [node name="Player" type="Node3D" parent="."]
-script = ExtResource("3_v00ao")
+script = ExtResource("4_62oq8")
 
-[node name="Lucy" parent="Player" instance=ExtResource("3_1woit")]
+[node name="Lucy" parent="Player" instance=ExtResource("5_mw38x")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 15, 0)
 stiffness = 74.8
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.901259, 0.433282, 0, -0.433282, 0.901259, 0, 80.2858, 93.4755)
+transform = Transform3D(1, 0, 0, 0, 0.366826, 0.93029, 0, -0.93029, 0.366826, 0, 250.529, 93.4755)
+far = 20000.0
 
 [node name="Coliseo" type="MeshInstance3D" parent="."]
 transform = Transform3D(17.6777, 0, 17.6777, 0, 10, 0, -17.6777, 0, 17.6777, 600, 29, 600)
-mesh = ExtResource("5_i7r2h")
+mesh = ExtResource("6_a1nmn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Coliseo"]
 transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, 5.40191, -7.49087, 2.51812)
@@ -65,3 +67,6 @@ skeleton = NodePath("../MeshInstance3D")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Coliseo"]
 transform = Transform3D(2.62733, -1.39938, -0.372672, 1.39938, 2.25466, 1.39938, -0.372672, -1.39938, 2.62733, -8.73233, -4.15445, -7.8993)
 mesh = SubResource("BoxMesh_i7r2h")
+
+[node name="Node3D" parent="." instance=ExtResource("7_q8ial")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 587.236, 15.4697, 1147.66)

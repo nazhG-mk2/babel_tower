@@ -7,9 +7,15 @@ var player = null
 var model = null
 var num_enemies = 0
 
-var kill_monster = false
+var pause_spawn = true
 
 var pause = false
 
 var exp: float = 0
 var health: float = 100
+
+enum States {
+	WALKING,
+	FLAYING,
+	CHANGING,
+}

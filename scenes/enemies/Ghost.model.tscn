@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cws7nqeii6h6f"]
+
+[ext_resource type="Script" uid="uid://bkr6ories08s6" path="res://scripts/enemies/model_behaviors/move_forware.gd" id="1_ax8y6"]
+[ext_resource type="ArrayMesh" uid="uid://seowojrsgr2f" path="res://models/enemies/gosh.obj" id="1_c3wmt"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_ax8y6")
+
+[node name="Gosh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.2636e-07, 2.8732, 7.46624, 1.25592e-07, 7.46624, -2.8732, -8, 0, -3.49691e-07, 0, 39.2072, 0)
+mesh = ExtResource("1_c3wmt")

@@ -244,7 +244,7 @@ damping = 1.0
 metadata/_custom_type_script = "uid://cnqb3ybiitnk2"
 
 [node name="But_r" type="Node3D" parent="Skeleton"]
-transform = Transform3D(-0.0723238, -0.995755, 0.0569339, -0.782495, 0.0920444, 0.615816, -0.618442, -1.2368e-05, -0.78583, -0.0569062, -1.31941, 0.328008)
+transform = Transform3D(-0.0723238, -0.995755, 0.0569339, -0.782495, 0.0920444, 0.615816, -0.618442, -1.2368e-05, -0.78583, -0.0569062, -1.31941, 0.328007)
 top_level = true
 script = ExtResource("2_krpkh")
 bone_name = "hip_r"

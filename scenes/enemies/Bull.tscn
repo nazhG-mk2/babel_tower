@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://crk53jybneobp"]
+
+[ext_resource type="Script" uid="uid://dtewkedky8efg" path="res://scripts/enemies/behaviors/Charge.gd" id="1_6ybqa"]
+
+[sub_resource type="Curve" id="Curve_6ybqa"]
+_limits = [0.0, 300.0, 0.0, 2.0]
+_data = [Vector2(0.450704, 0), 0.0, 0.0, 0, 0, Vector2(1, 300), 0.0, 0.0, 0, 0, Vector2(1.64789, 300), 0.0, 0.0, 0, 0, Vector2(1.98592, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+metadata/_snap_count = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xl80y"]
+radius = 22.0
+
+[node name="CharacterBody2D2" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 5
+motion_mode = 1
+floor_stop_on_slope = false
+floor_block_on_wall = false
+script = ExtResource("1_6ybqa")
+charge_curve = SubResource("Curve_6ybqa")
+enemy_type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xl80y")
+debug_color = Color(0, 0.541501, 0.953511, 0.42)

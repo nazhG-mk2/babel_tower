@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpppw5so4atjs"]
+
+[ext_resource type="Script" uid="uid://dkdruvjh0t1qx" path="res://scripts/enemies/EnemyModel.gd" id="1_rbykn"]
+[ext_resource type="ArrayMesh" uid="uid://seowojrsgr2f" path="res://models/enemies/gosh.obj" id="2_656uv"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_rbykn")
+
+[node name="Gosh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_656uv")

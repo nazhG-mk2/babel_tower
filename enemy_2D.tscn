@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://djmlfraqsfq8p"]
 
-[ext_resource type="Script" uid="uid://bjbch8fg7htfx" path="res://scripts/enemyChase.gd" id="1_71gek"]
+[ext_resource type="Script" uid="uid://bjbch8fg7htfx" path="res://scripts/enemies/behaviors/Chase.gd" id="1_71gek"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xl80y"]
 radius = 2.0

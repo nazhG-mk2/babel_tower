@@ -1,13 +1,12 @@
 extends Node2D
 
-@export var enemy_scenes: Array[PackedScene]  # Lista de escenas de enemigos
 @export var spawn_interval := 2.0
 @export var spawn_distance := 400.0
 
 var timer := 0.0
 
 func _process(delta):
-	if Global.kill_monster:
+	if Global.pause_spawn:
 		return
 	timer += delta
 	if timer >= spawn_interval:
@@ -26,13 +25,16 @@ func is_position_free(pos: Vector2) -> bool:
 
 func spawn_enemies():
 	var attempts := 0
-	while attempts < 10:
+	while attempts < 1:
 		var angle = randf_range(0, TAU)
 		var offset = Vector2(cos(angle), sin(angle)) * spawn_distance
 		var spawn_pos = Vector2(600, 600) + offset
-		if is_position_free(spawn_pos) and enemy_scenes.size() > 0:
-			var scene = enemy_scenes[randi() % enemy_scenes.size()]
+		if is_position_free(spawn_pos) and Enemies.list.size() > 0:
+			var scene = Enemies.list[5].hitbox
+			#var scene = enemy_scenes[randi() % enemy_scenes.size()]
 			var enemy = scene.instantiate()
+			var id = EnemyManager.spawn_enemy(enemy)
+			enemy.id = id
 			enemy.global_position = spawn_pos
 			add_child(enemy)
 		attempts += 1

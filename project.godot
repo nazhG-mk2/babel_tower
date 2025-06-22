@@ -11,19 +11,25 @@ config_version=5
 [application]
 
 config/name="babel_tower"
-run/main_scene="res://scenes/world/map_1.tscn"
+run/main_scene="uid://3atii185nyuv"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
 [autoload]
 
-EventBus="*res://scripts/EventBus.gd"
+EventBus="*res://scripts/globals/EventBus.gd"
 Global="*res://scripts/global.gd"
-EnemyManager="*res://scripts/EnemyManager.gd"
+Enemies="*res://scripts/globals/Enemies.gd"
+EnemyManager="*res://scripts/globals/GlobalEnemyManager.gd"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/jigglebones/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
+
+[global_group]
+
+obstacle="Walls"
+enemy=""
 
 [input]
 
@@ -40,4 +46,10 @@ dash={
 
 [layer_names]
 
+2d_physics/layer_1="Player"
+2d_physics/layer_2="LowGround"
+2d_physics/layer_3="HighGround"
 3d_physics/layer_3="Resources"
+2d_physics/layer_4="LowSky"
+2d_physics/layer_5="HighSky"
+2d_physics/layer_6="Ethereal"

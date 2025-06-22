@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp1avb0af1aqi"]
+
+[ext_resource type="Script" uid="uid://dcu2115o3427h" path="res://scripts/enemies/Wisp.gd" id="1_p8g0y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xl80y"]
+
+[node name="CharacterBody2D2" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 3
+collision_mask = 0
+motion_mode = 1
+floor_stop_on_slope = false
+floor_block_on_wall = false
+script = ExtResource("1_p8g0y")
+enemy_type = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xl80y")
+debug_color = Color(0.707622, 0.940861, 1, 0.42)

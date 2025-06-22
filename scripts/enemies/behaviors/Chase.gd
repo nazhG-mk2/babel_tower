@@ -1,9 +1,8 @@
-extends "res://scripts/enemy.gd"
+extends "res://scripts/enemies/Enemy.gd"
 
 @export var speed: float = 90.0
-@export var enemy_type: int
 
-func _physics_process(_delta):
+func chase_player():
 	var direction = (Global.player_position_2D - global_position).normalized()
 	velocity = direction * speed
 	move_and_slide()

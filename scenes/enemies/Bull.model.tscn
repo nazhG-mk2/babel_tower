@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bamstoqycwq7r"]
+
+[ext_resource type="Script" uid="uid://dkdruvjh0t1qx" path="res://scripts/enemies/EnemyModel.gd" id="1_esidu"]
+[ext_resource type="ArrayMesh" uid="uid://dcqkhslj5h25j" path="res://models/enemies/pig.obj" id="2_hl8gd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r7s0s"]
+albedo_color = Color(0, 0.493846, 0.954845, 1)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_esidu")
+
+[node name="Pig" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 13.4493, 0)
+material_override = SubResource("StandardMaterial3D_r7s0s")
+mesh = ExtResource("2_hl8gd")

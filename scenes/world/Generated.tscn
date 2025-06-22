@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjfpjesuntiwe"]
 
-[ext_resource type="PackedScene" uid="uid://3atii185nyuv" path="res://scenes/map_2D.tscn" id="1_peojy"]
+[ext_resource type="PackedScene" uid="uid://3atii185nyuv" path="res://scenes/world/map_2D.tscn" id="1_peojy"]
 
 [node name="Node3D" type="Node3D"]
 

@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqbckknevob1t"]
+[gd_scene load_steps=4 format=3 uid="uid://dh3jg7xxgbqk0"]
 
-[ext_resource type="Script" uid="uid://dkdruvjh0t1qx" path="res://scripts/EnemyModel.gd" id="1_f3f1r"]
-[ext_resource type="ArrayMesh" uid="uid://bg28hmrovam3" path="res://models/enemies/bat.obj" id="1_uplyd"]
+[ext_resource type="Script" uid="uid://dkdruvjh0t1qx" path="res://scripts/enemies/EnemyModel.gd" id="1_ontew"]
+[ext_resource type="ArrayMesh" uid="uid://bg28hmrovam3" path="res://models/enemies/bat.obj" id="2_jqf53"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3f1r"]
 cull_mode = 2
 albedo_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_f3f1r")
+script = ExtResource("1_ontew")
 
 [node name="Bat" type="MeshInstance3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 23.116, 0)
 material_override = SubResource("StandardMaterial3D_f3f1r")
-mesh = ExtResource("1_uplyd")
+mesh = ExtResource("2_jqf53")
