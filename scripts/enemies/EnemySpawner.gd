@@ -30,8 +30,7 @@ func spawn_enemies():
 		var offset = Vector2(cos(angle), sin(angle)) * spawn_distance
 		var spawn_pos = Vector2(600, 600) + offset
 		if is_position_free(spawn_pos) and Enemies.list.size() > 0:
-			var scene = Enemies.list[5].hitbox
-			#var scene = enemy_scenes[randi() % enemy_scenes.size()]
+			var scene = Enemies.list[randi() % Enemies.list.size()].hitbox
 			var enemy = scene.instantiate()
 			var id = EnemyManager.spawn_enemy(enemy)
 			enemy.id = id

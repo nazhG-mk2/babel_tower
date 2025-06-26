@@ -1,8 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkxgarlcfbo5m"]
+[gd_scene load_steps=5 format=3 uid="uid://dkxgarlcfbo5m"]
 
 [ext_resource type="Script" uid="uid://dkdruvjh0t1qx" path="res://scripts/enemies/EnemyModel.gd" id="1_76646"]
+[ext_resource type="Shader" uid="uid://d1fm08fmvdxb4" path="res://scenes/world/fireball_head2.tres" id="2_res84"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_415r4"]
+render_priority = 0
+shader = ExtResource("2_res84")
+shader_parameter/Fire_color = Color(1, 0, 0, 1)
+shader_parameter/Speed = Vector2(1, 0)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_avqr4"]
+material = SubResource("ShaderMaterial_415r4")
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_76646")

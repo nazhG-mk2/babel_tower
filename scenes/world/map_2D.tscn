@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://3atii185nyuv"]
+[gd_scene load_steps=11 format=3 uid="uid://3atii185nyuv"]
 
 [ext_resource type="Script" uid="uid://c6cxx4cbed2go" path="res://scripts/World.gd" id="1_f450b"]
 [ext_resource type="Script" uid="uid://vuie4hfv2vad" path="res://scripts/sub_viewport.gd" id="2_q8ial"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://buaxubo1xxjcy" path="res://scripts/playe_position.gd" id="4_62oq8"]
 [ext_resource type="PackedScene" uid="uid://bhapi8dm4a8mf" path="res://scenes/player/lucy.tscn" id="5_mw38x"]
 [ext_resource type="ArrayMesh" uid="uid://bgbnmgjnfrxsa" path="res://models/coliseo_abierto.obj" id="6_a1nmn"]
-[ext_resource type="PackedScene" uid="uid://dkxgarlcfbo5m" path="res://scenes/enemies/Wisp.model.tscn" id="7_q8ial"]
 
 [sub_resource type="Environment" id="Environment_o1wbl"]
 background_mode = 1
@@ -67,6 +66,3 @@ skeleton = NodePath("../MeshInstance3D")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Coliseo"]
 transform = Transform3D(2.62733, -1.39938, -0.372672, 1.39938, 2.25466, 1.39938, -0.372672, -1.39938, 2.62733, -8.73233, -4.15445, -7.8993)
 mesh = SubResource("BoxMesh_i7r2h")
-
-[node name="Node3D" parent="." instance=ExtResource("7_q8ial")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 587.236, 15.4697, 1147.66)
