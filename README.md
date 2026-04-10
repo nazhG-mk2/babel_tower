@@ -1,5 +1,9 @@
 # TEMP NAME: babel_tower
 
+new names:
+rogue defence 
+tower infinity defence 
+
 ## [GDD - temp](https://excalidraw.com/#room=1c075e9df7693deada8d,jxQ_yw7jnBLWn4tNiRGGzA)
 
 ## How to try it
